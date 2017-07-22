@@ -1,5 +1,14 @@
 import React from 'react'
-import { StyleSheet, Text, Button, TextInput, TouchableOpacity, View } from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  Button,
+  TextInput,
+  TouchableOpacity,
+  View
+} from 'react-native';
+import Custom from './Custom';
+import Select from './Select';
 
 export default class Amount extends React.Component {
   constructor(props) {
@@ -11,89 +20,81 @@ export default class Amount extends React.Component {
   }
   showOther = () => {
     if (this.state.show) {
-      this.setState({ show: false });
+      this.setState({show: false});
     } else {
-      this.setState({ show: true });
+      this.setState({show: true});
     }
   }
-  render(){
-    const { navigate } = this.props.navigation;
+  render() {
+    const {navigate} = this.props.navigation;
     return (
       <View style={styles.container}>
         {
           this.state.show
-            ?
-              <View>
+            ? <View>
                 <Text style={styles.greeting}>Specify an amount:</Text>
-                <TextInput
-                 style={styles.amount}
-                 placeholder="$"
-                 onChangeText={(text) => this.setState({text})}
-               />
-               <View style={styles.button}>
-                 <TouchableOpacity onPress={()=>navigate('Confirm', {donation: this.state.text})}>
-                   <View style={styles.button}>
-                     <Text style={styles.buttonText}>Donate now!</Text>
-                   </View>
-                 </TouchableOpacity>
-               </View>
-             </View>
-            :
-            <View>
-            <Text style={styles.greeting}>Choose an amount:</Text>
-            <View style={styles.donateContainer}>
-              <View style={styles.button}>
-                <TouchableOpacity onPress={()=>navigate('Confirm', {donation: 5})}>
-                  <View style={styles.button}>
-                    <Text style={styles.buttonText}>$5</Text>
-                  </View>
-                </TouchableOpacity>
+                <TextInput style={styles.amount} placeholder="$" onChangeText={(text) => this.setState({text})}/>
+                <View style={styles.button}>
+                  <TouchableOpacity onPress={() => navigate('Confirm', {donation: this.state.text})}>
+                    <View style={styles.button}>
+                      <Text style={styles.buttonText}>Donate now!</Text>
+                    </View>
+                  </TouchableOpacity>
+                </View>
               </View>
-              <View style={styles.button}>
-                <TouchableOpacity onPress={()=>navigate('Confirm', {donation: 10})}>
+            : <View style={styles.container}>
+                <Text style={styles.greeting}>Choose an amount:</Text>
+                <View style={styles.donateContainer}>
                   <View style={styles.button}>
-                    <Text style={styles.buttonText}>$10</Text>
+                    <TouchableOpacity onPress={() => navigate('Confirm', {donation: 5})}>
+                      <View style={styles.button}>
+                        <Text style={styles.buttonText}>$5</Text>
+                      </View>
+                    </TouchableOpacity>
                   </View>
-                </TouchableOpacity>
-              </View>
-              <View style={styles.button}>
-                <TouchableOpacity onPress={()=>navigate('Confirm', {donation: 20})}>
                   <View style={styles.button}>
-                    <Text style={styles.buttonText}>$20</Text>
+                    <TouchableOpacity onPress={() => navigate('Confirm', {donation: 10})}>
+                      <View style={styles.button}>
+                        <Text style={styles.buttonText}>$10</Text>
+                      </View>
+                    </TouchableOpacity>
                   </View>
-                </TouchableOpacity>
-              </View>
-              <View style={styles.button}>
-                <TouchableOpacity onPress={()=>navigate('Confirm', {donation: 50})}>
                   <View style={styles.button}>
-                    <Text style={styles.buttonText}>$50</Text>
+                    <TouchableOpacity onPress={() => navigate('Confirm', {donation: 20})}>
+                      <View style={styles.button}>
+                        <Text style={styles.buttonText}>$20</Text>
+                      </View>
+                    </TouchableOpacity>
                   </View>
-                </TouchableOpacity>
-              </View>
-              <View style={styles.button}>
-                <TouchableOpacity onPress={()=>navigate('Confirm', {donation: 100})}>
                   <View style={styles.button}>
-                    <Text style={styles.buttonText}>$100</Text>
+                    <TouchableOpacity onPress={() => navigate('Confirm', {donation: 50})}>
+                      <View style={styles.button}>
+                        <Text style={styles.buttonText}>$50</Text>
+                      </View>
+                    </TouchableOpacity>
                   </View>
-                </TouchableOpacity>
-              </View>
-              <View style={styles.button}>
-                <TouchableOpacity onPress={this.showOther}>
                   <View style={styles.button}>
-                    <Text style={styles.buttonText}>Other</Text>
+                    <TouchableOpacity onPress={() => navigate('Confirm', {donation: 100})}>
+                      <View style={styles.button}>
+                        <Text style={styles.buttonText}>$100</Text>
+                      </View>
+                    </TouchableOpacity>
                   </View>
-                </TouchableOpacity>
+                  <View style={styles.button}>
+                    <TouchableOpacity onPress={this.showOther}>
+                      <View style={styles.button}>
+                        <Text style={styles.buttonText}>Other</Text>
+                      </View>
+                    </TouchableOpacity>
+                  </View>
+                </View>
               </View>
-            </View>
-          </View>
-        }
-
+            }
         {/* this.state.show ? <Select navigate={this.props.navigation}/> : <Custom navigate={this.props.navigation}/>*/}
       </View>
     );
   }
 }
-
 
 const styles = StyleSheet.create({
   container: {
@@ -101,15 +102,15 @@ const styles = StyleSheet.create({
     backgroundColor: '#3a3b3e',
     alignItems: 'center',
     justifyContent: 'center',
-    flexDirection: 'column',
+    flexDirection: 'column'
   },
-  greeting:{
+  greeting: {
     // marginTop: 250,
     fontSize: 30,
     fontFamily: 'Avenir',
-    color: '#ffffff',
+    color: '#ffffff'
   },
-  amount:{
+  amount: {
     fontSize: 30,
     height: 40,
     // margin: 20,
@@ -119,7 +120,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderColor: '#000'
   },
-  button:{
+  button: {
     margin: 20,
     backgroundColor: '#f4e375',
     borderRadius: 25,
