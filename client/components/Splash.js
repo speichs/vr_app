@@ -5,7 +5,6 @@ import { StackNavigator } from 'react-navigation';
 export default class Start extends React.Component {
   static navigationOptions = { header:null}
   addAmount = ()=>{
-    console.log('clicked', this.props.navigation.navigate);
     this.props.navigation.navigate('Amount')
   }
 
