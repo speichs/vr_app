@@ -105,7 +105,6 @@ const styles = StyleSheet.create({
     flexDirection: 'column'
   },
   greeting: {
-    // marginTop: 250,
     fontSize: 30,
     fontFamily: 'Avenir',
     color: '#ffffff'
@@ -113,7 +112,6 @@ const styles = StyleSheet.create({
   amount: {
     fontSize: 30,
     height: 40,
-    // margin: 20,
     width: 200,
     color: '#000',
     fontFamily: 'Avenir',
@@ -121,16 +119,19 @@ const styles = StyleSheet.create({
     borderColor: '#000'
   },
   button: {
-    margin: 20,
+    marginTop: 20,
+    marginBottom: 20,
+    marginRight: 30,
+    marginLeft: 30,
+    // height: 20,
+    // width: 40,
     backgroundColor: '#f4e375',
     borderRadius: 25,
-    // width: 100
   },
   donateContainer: {
     flex: 1,
     flexWrap: 'wrap',
     flexDirection: 'row',
     alignItems: 'center',
-    // marginTop: -250
   }
 });
