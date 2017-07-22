@@ -3,11 +3,9 @@ import { StyleSheet, Text, Button, Alert, TouchableOpacity, View, TextInput } fr
 import { StackNavigator } from 'react-navigation';
 
 export default class Custom extends React.Component {
-  addAmount = ()=>{
-    console.log('clicked', this.props.navigation.navigate);
-    this.props.navigation.navigate('Amount')
+  constructor(props) {
+    super(props)
   }
-
   render() {
     const { navigate } = this.props.navigation;
     return (
