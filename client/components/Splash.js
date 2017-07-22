@@ -3,6 +3,7 @@ import { StyleSheet, Text, Button, Alert, TouchableOpacity, View } from 'react-n
 import { StackNavigator } from 'react-navigation';
 
 export default class Start extends React.Component {
+  static navigationOptions = { header:null}
   addAmount = ()=>{
     console.log('clicked', this.props.navigation.navigate);
     this.props.navigation.navigate('Amount')
@@ -28,7 +29,7 @@ export default class Start extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#0d8ccb',
+    backgroundColor: '#3a3b3e',
     alignItems: 'center',
     justifyContent: 'center',
   },
