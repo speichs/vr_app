@@ -7,6 +7,8 @@ export default class Confirm extends React.Component {
     console.log('props', this.props);
     return (
       <View style={styles.container}>
+        <Text style={styles.greeting}>Your Name</Text>
+        <Text style={styles.greeting}>Organization Name</Text>
         <Text style={styles.greeting}>Your Donation: ${this.props.navigation.state.params.donation}</Text>
         <View style={styles.button}>
           <TouchableOpacity onPress={() => navigate('')}>
