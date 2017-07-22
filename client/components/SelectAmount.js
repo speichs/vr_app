@@ -49,10 +49,10 @@ export default class Amount extends React.Component {
                   <View style={styles.button}>
                     <TouchableOpacity onPress={() => navigate('Confirm', {donation: 5})}>
                       <View style={styles.button}>
-                        <Text style={styles.buttonText}>Sponsor an Axolotl!</Text>
+                        <Text style={styles.buttonText}>Sponsor a Honey Bee!</Text>
                         <Image
                           style={{width: 60, height: 60, borderRadius: 15}}
-                          source={{uri: 'https://www.jotform.com/uploads/toddlehman/form_files/axolotl.296.jpg'}}
+                          source={{uri: 'https://upload.wikimedia.org/wikipedia/commons/a/a8/Bees_Collecting_Pollen_2004-08-14.jpg'}}
                           />
                         <Text style={styles.buttonText}>$5</Text>
                       </View>
