@@ -14,7 +14,7 @@ export default class Start extends React.Component {
       <View style={styles.container}>
         <Text style={styles.greeting}>Want to help?</Text>
         <View style={styles.button}>
-          <TouchableOpacity onPress={() => navigate('Amount')}>
+          <TouchableOpacity onPress={() => navigate('SelectAmount')}>
             <View style={styles.button}>
               <Text style={styles.buttonText}>Donate now!</Text>
             </View>
