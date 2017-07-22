@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
   },
   greeting:{
     fontSize: 30,
-    fontFamily: 'Avenir',
+    // fontFamily: 'Avenir',
     color: '#ffffff',
   },
   button:{

@@ -5,7 +5,8 @@ import {
   Button,
   TextInput,
   TouchableOpacity,
-  View
+  View,
+  Image
 } from 'react-native';
 import Custom from './Custom';
 import Select from './Select';
@@ -48,6 +49,11 @@ export default class Amount extends React.Component {
                   <View style={styles.button}>
                     <TouchableOpacity onPress={() => navigate('Confirm', {donation: 5})}>
                       <View style={styles.button}>
+                        <Text style={styles.buttonText}>Sponsor an Axolotl!</Text>
+                        <Image
+                          style={{width: 60, height: 60, borderRadius: 15}}
+                          source={{uri: 'https://www.jotform.com/uploads/toddlehman/form_files/axolotl.296.jpg'}}
+                          />
                         <Text style={styles.buttonText}>$5</Text>
                       </View>
                     </TouchableOpacity>
@@ -55,6 +61,11 @@ export default class Amount extends React.Component {
                   <View style={styles.button}>
                     <TouchableOpacity onPress={() => navigate('Confirm', {donation: 10})}>
                       <View style={styles.button}>
+                      <Text style={styles.buttonText}>Sponsor an Axolotl!</Text>
+                      <Image
+                        style={{width: 60, height: 60, borderRadius: 15}}
+                        source={{uri: 'https://www.jotform.com/uploads/toddlehman/form_files/axolotl.296.jpg'}}
+                        />
                         <Text style={styles.buttonText}>$10</Text>
                       </View>
                     </TouchableOpacity>
@@ -107,7 +118,7 @@ const styles = StyleSheet.create({
   greeting: {
     // marginTop: 250,
     fontSize: 30,
-    fontFamily: 'Avenir',
+    // fontFamily: 'Avenir',
     color: '#ffffff'
   },
   amount: {
@@ -116,7 +127,7 @@ const styles = StyleSheet.create({
     // margin: 20,
     width: 200,
     color: '#000',
-    fontFamily: 'Avenir',
+    // fontFamily: 'Avenir',
     borderWidth: 2,
     borderColor: '#000'
   },
@@ -124,6 +135,7 @@ const styles = StyleSheet.create({
     margin: 20,
     backgroundColor: '#f4e375',
     borderRadius: 25,
+    alignItems: 'center',
     // width: 100
   },
   donateContainer: {

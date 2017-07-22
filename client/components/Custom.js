@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
   greeting:{
     // marginTop: 250,
     fontSize: 30,
-    fontFamily: 'Avenir',
+    // fontFamily: 'Avenir',
     color: '#ffffff',
   },
   amount:{
@@ -50,8 +50,7 @@ const styles = StyleSheet.create({
     // margin: 20,
     width: 200,
     color: '#073e87',
-    fontFamily: 'Avenir',
-    borderWidth: 2,
+    // borderWidth: 2,
     borderColor: 'rgb(6, 7, 74)'
   },
   button:{
