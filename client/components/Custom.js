@@ -1,6 +1,5 @@
 import React from 'react';
 import { StyleSheet, Text, Button, Alert, TouchableOpacity, View, TextInput } from 'react-native';
-import { StackNavigator } from 'react-navigation';
 
 export default class Custom extends React.Component {
   constructor(props) {

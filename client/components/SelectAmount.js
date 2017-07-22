@@ -90,7 +90,8 @@ export default class Amount extends React.Component {
                 </View>
               </View>
             }
-        {/* this.state.show ? <Select navigate={this.props.navigation}/> : <Custom navigate={this.props.navigation}/>*/}
+
+        {/* {this.state.show ? <Select navigate={this.props.navigation}/> : <Custom navigate={this.props.navigation}/>} */}
       </View>
     );
   }

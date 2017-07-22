@@ -1,6 +1,5 @@
 import React from 'react';
 import { StyleSheet, Text, Button, Alert, TouchableOpacity, View, StatusBar } from 'react-native';
-import { StackNavigator } from 'react-navigation';
 
 export default class Start extends React.Component {
   static navigationOptions = { header:null}
