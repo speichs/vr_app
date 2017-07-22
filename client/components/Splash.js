@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, Button, Alert, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, Text, Button, Alert, TouchableOpacity, View, StatusBar } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 
 export default class Start extends React.Component {
@@ -13,6 +13,7 @@ export default class Start extends React.Component {
     const { navigate } = this.props.navigation;
     return (
       <View style={styles.container}>
+        <StatusBar hidden={true} />
         <Text style={styles.greeting}>Want to help?</Text>
         <View style={styles.button}>
           <TouchableOpacity onPress={() => navigate('Amount')}>
