@@ -88,6 +88,7 @@ export default class Amount extends React.Component {
           </View>
         }
 
+        {/* this.state.show ? <Select navigate={this.props.navigation}/> : <Custom navigate={this.props.navigation}/>*/}
       </View>
     );
   }
@@ -97,7 +98,7 @@ export default class Amount extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#0d8ccb',
+    backgroundColor: '#3a3b3e',
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'column',
@@ -113,10 +114,10 @@ const styles = StyleSheet.create({
     height: 40,
     // margin: 20,
     width: 200,
-    color: '#073e87',
+    color: '#000',
     fontFamily: 'Avenir',
     borderWidth: 2,
-    borderColor: 'rgb(6, 7, 74)'
+    borderColor: '#000'
   },
   button:{
     margin: 20,
