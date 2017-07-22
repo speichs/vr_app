@@ -2,11 +2,9 @@ import React from 'react';
 import { StyleSheet, Text, Button, Alert, TouchableOpacity, View } from 'react-native';
 
 export default class Select extends React.Component {
-  addAmount = ()=>{
-    console.log('clicked', this.props.navigation.navigate);
-    this.props.navigation.navigate('Amount')
+  constructor(props) {
+    super(props)
   }
-
   render() {
     const { navigate } = this.props.navigation;
     return (
