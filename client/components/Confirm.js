@@ -4,7 +4,6 @@ import { StyleSheet, Text, Button, Alert, TouchableOpacity, View } from 'react-n
 export default class Confirm extends React.Component {
   render() {
     const { navigate } = this.props.navigation;
-    console.log('props', this.props);
     return (
       <View style={styles.container}>
         <Text style={styles.greeting}>Your Name</Text>
