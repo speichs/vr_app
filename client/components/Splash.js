@@ -20,7 +20,11 @@ export default class Start extends React.Component {
         <View style={styles.subcontainer1}>
           <Text style={styles.greeting}>Want to help?</Text>
           <View>
-            <TouchableOpacity  onPress={() => navigate('Amount')}>
+            <TouchableOpacity  onPress={
+              // () => navigate('Amount')}
+             ()=> Alert.alert('Please see a representative for further assistance')
+           }
+            >
               <View>
                 <Text style={styles.buttonText}> Donate now!</Text>
               </View>
@@ -72,5 +76,8 @@ const styles = StyleSheet.create({
     fontFamily: fonts.MontserratThin,
     color: colors.white,
     paddingBottom: 10,
+  },
+  garage: {
+    fontFamily: fonts.MontserratLight,
   }
 });
