@@ -64,7 +64,7 @@ export default class Amount extends React.Component {
                       <Text style={styles.buttonText}>Sponsor an Axolotl!</Text>
                       <Image
                         style={{width: 60, height: 60, borderRadius: 15}}
-                        source={{uri: 'https://www.jotform.com/uploads/toddlehman/form_files/axolotl.296.jpg'}}
+                        source={{uri: 'https://i.giphy.com/media/RE5iREBNhI0Ok/giphy.webp'}}
                         />
                         <Text style={styles.buttonText}>$10</Text>
                       </View>
