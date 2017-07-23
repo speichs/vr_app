@@ -1,6 +1,9 @@
 import React from 'react';
 import { StyleSheet, Text, Button, Alert, TouchableOpacity, View, StatusBar } from 'react-native';
 import { StackNavigator } from 'react-navigation';
+import colors from '../config/colors';
+import fonts from '../config/fonts'
+
 
 export default class Start extends React.Component {
   static navigationOptions = { header:null}
@@ -30,18 +33,18 @@ export default class Start extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#3a3b3e',
+    backgroundColor: colors.darkgray,
     alignItems: 'center',
     justifyContent: 'center',
   },
   greeting:{
     fontSize: 30,
-    fontFamily: 'Avenir',
-    color: '#ffffff',
+    fontFamily: fonts.MontserratThin,
+    color: colors.white,
   },
   button:{
     margin: 20,
-    backgroundColor: '#f4e375',
+    backgroundColor: colors.yellow,
     borderRadius: 25,
   }
 });
