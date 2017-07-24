@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, Button, Alert, TouchableOpacity, View, StatusBar } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import colors from '../config/colors';
-import fonts from '../config/fonts'
+import fonts from '../config/fonts';
 
 
 export default class Start extends React.Component {
@@ -21,9 +21,9 @@ export default class Start extends React.Component {
           <Text style={styles.greeting}>Want to help?</Text>
           <View>
             <TouchableOpacity  onPress={
-              // () => navigate('Amount')}
-             ()=> Alert.alert('Please see a representative for further assistance')
-           }
+             () => navigate('Card')}
+          //    ()=> Alert.alert('Please see a representative for further assistance')
+          //  }
             >
               <View>
                 <Text style={styles.buttonText}> Donate now!</Text>
