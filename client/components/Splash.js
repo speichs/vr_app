@@ -2,36 +2,31 @@ import React from 'react';
 import { StyleSheet, Text, Button, Alert, TouchableOpacity, View, StatusBar } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import colors from '../config/colors';
-import fonts from '../config/fonts'
+import fonts from '../config/fonts';
+import button from '../assets/buttons/buttons';
 
 
 export default class Start extends React.Component {
   static navigationOptions = { header:null}
-  addAmount = ()=>{
-    this.props.navigation.navigate('Amount')
-  }
 
   render() {
     const { navigate } = this.props.navigation;
     return (
       <View style={styles.container}>
         <StatusBar hidden={true} />
-
         <View style={styles.subcontainer1}>
           <Text style={styles.greeting}>Want to help?</Text>
           <View>
             <TouchableOpacity  onPress={
-              // () => navigate('Amount')}
-             ()=> Alert.alert('Please see a representative for further assistance')
-           }
+              () => navigate('SelectAmount')}
             >
               <View>
-                <Text style={styles.buttonText}> Donate now!</Text>
+                <Text style={button}>Donate now!</Text>
               </View>
             </TouchableOpacity>
           </View>
         </View>
-        <View style={styles.subcontainer2}>
+        <View>
           <Text style={styles.footer}>Powered By:
             <Text style={styles.garage}> REALITY GARAGE
             </Text>
@@ -56,7 +51,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   greeting:{
-    fontSize: 40,
+    fontSize: 60,
     fontFamily: fonts.MontserratThin,
     color: colors.white,
     margin: 20,
