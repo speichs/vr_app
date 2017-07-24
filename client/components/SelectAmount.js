@@ -8,8 +8,6 @@ import {
   TouchableOpacity,
   View
 } from 'react-native';
-import Custom from './Custom';
-import Select from './Select';
 import button from '../assets/buttons/buttons';
 import colors from '../config/colors';
 import fonts from '../config/fonts';

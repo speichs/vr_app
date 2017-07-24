@@ -19,7 +19,7 @@
     "preset": "jest-expo"
   },
   "dependencies": {
-    "elizabeth-tas-numpad": "^1.0.5",
+    "elizabeth-tas-numpad": "^1.0.6",
     "expo": "^18.0.3",
     "react": "16.0.0-alpha.12",
     "react-native": "^0.45.1",
