@@ -12,6 +12,38 @@ import Select from './Select';
 import button from '../assets/buttons/buttons';
 import colors from '../config/colors';
 import fonts from '../config/fonts';
+import Keyboard from 'react-native-keyboard';
+
+let model = {
+    _keys: [],
+    _listeners: [],
+    addKey(key) {
+        this._keys.push(key);
+        this._notify();
+    },
+    delKey() {
+        this._keys.pop();
+        this._notify();
+    },
+    clearAll() {
+        this._keys = [];
+        this._notify();
+    },
+    getKeys() {
+        return this._keys;
+    },
+    onChange(listener) {
+        if (typeof listener === 'function') {
+            this._listeners.push(listener);
+        }
+    },
+    _notify() {
+        this._listeners.forEach((listner) => {
+            listner(this);
+        });
+    }
+};
+
 
 
 export default class Amount extends React.Component {
@@ -24,12 +56,24 @@ export default class Amount extends React.Component {
       show: false
     };
   }
+  _handleClear() {
+      model.clearAll();
+  }
+  _handleDelete() {
+      model.delKey();
+  }
+  _handleKeyPress(key) {
+      model.addKey(key);
+  }
+
   showOther = () => {
     if (this.state.show) {
       this.setState({show: false});
     } else {
       this.setState({show: true});
-      // .onFocus();
+      model.onChange((model) => {
+            this.setState({text: model.getKeys().join('')});
+        });
     }
   }
   render() {
@@ -42,12 +86,19 @@ export default class Amount extends React.Component {
               <View>
                 <View style={styles.container4}>
                   <Text style={styles.greeting}>Specify an amount:</Text>
-                  <TextInput style={styles.amount} KeyboardType= {"numeric"} placeholder="$" placeholderTextColor = {colors.yellow} onChangeText={(text) => this.setState({text})} autoFocus={true} />
+                  <TextInput style={styles.amount} placeholder="$" placeholderTextColor = {colors.yellow} onChangeText={(text) => this.setState({text})} value={this.state.text}/>
                   <TouchableOpacity onPress={() => navigate('Confirm', {donation: this.state.text})}>
                   <Text style={button}>Donate now!</Text>
                   </TouchableOpacity>
                 </View>
                 <View style = {styles.container5}>
+                <Keyboard
+                style = {styles.keyboard}
+                keyboardType="decimal-pad"
+                onClear={this._handleClear.bind(this)}
+                onDelete={this._handleDelete.bind(this)}
+                onKeyPress={this._handleKeyPress.bind(this)}
+                />
                 </View>
               </View>
             : <View >
@@ -166,6 +217,8 @@ const styles = StyleSheet.create({
   },
   container5: {
     flex:3,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   buttonMargin: {
     minWidth: 100,
@@ -179,5 +232,5 @@ const styles = StyleSheet.create({
   },
   garage: {
     fontFamily: fonts.MontserratLight,
-  }
+  },
 });
