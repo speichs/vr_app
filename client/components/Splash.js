@@ -21,12 +21,12 @@ export default class Start extends React.Component {
               () => navigate('SelectAmount')}
             >
               <View>
-                <Text style={button}> Donate now!</Text>
+                <Text style={button}>Donate now!</Text>
               </View>
             </TouchableOpacity>
           </View>
         </View>
-        <View style={styles.subcontainer2}>
+        <View>
           <Text style={styles.footer}>Powered By:
             <Text style={styles.garage}> REALITY GARAGE
             </Text>
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   greeting:{
-    fontSize: 40,
+    fontSize: 60,
     fontFamily: fonts.MontserratThin,
     color: colors.white,
     margin: 20,
