@@ -1,4 +1,5 @@
 import React from 'react'
+import Keyboard from 'react-native-keyboard';
 import {
   StyleSheet,
   Text,
@@ -12,7 +13,6 @@ import Select from './Select';
 import button from '../assets/buttons/buttons';
 import colors from '../config/colors';
 import fonts from '../config/fonts';
-import Keyboard from 'react-native-keyboard';
 
 let model = {
     _keys: [],
@@ -233,4 +233,7 @@ const styles = StyleSheet.create({
   garage: {
     fontFamily: fonts.MontserratLight,
   },
+  keyboard: {
+    borderWidth: 20,
+  }
 });
