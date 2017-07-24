@@ -2,7 +2,8 @@ import React from 'react';
 import { StyleSheet, Text, Button, Alert, TouchableOpacity, View, StatusBar } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import colors from '../config/colors';
-import fonts from '../config/fonts'
+import fonts from '../config/fonts';
+import button from '../assets/buttons/buttons';
 
 
 export default class Start extends React.Component {
@@ -20,7 +21,7 @@ export default class Start extends React.Component {
               () => navigate('SelectAmount')}
             >
               <View>
-                <Text style={styles.buttonText}> Donate now!</Text>
+                <Text style={button}> Donate now!</Text>
               </View>
             </TouchableOpacity>
           </View>

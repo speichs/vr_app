@@ -9,9 +9,11 @@ import {
 } from 'react-native';
 import Custom from './Custom';
 import Select from './Select';
+import button from '../assets/buttons/buttons';
+
 
 export default class Amount extends React.Component {
-  static navigationOptions = { header:null}
+  static navigationOptions = {header:null}
 
   constructor(props) {
     super(props);
@@ -38,13 +40,13 @@ export default class Amount extends React.Component {
                 <Text style={styles.greeting}>Specify an amount:</Text>
               </View>
               <View style = {styles.container5}>
-                <TextInput style={styles.amount} placeholder="$" onChangeText={(text) => this.setState({text})}/>
+                <TextInput style={styles.amount} placeholder="$" onChangeText={(text) => this.setState({text})} ref={(input) => { this.textInput = input; }}/>
               </View>
               <View style = {styles.container6}>
-                <View style={styles.button}>
+                <View >
                     <TouchableOpacity onPress={() => navigate('Confirm', {donation: this.state.text})}>
-                      <View style={styles.button}>
-                        <Text style={styles.buttonText}>Donate now!</Text>
+                      <View >
+                        <Text style={button}>Donate now!</Text>
                       </View>
                     </TouchableOpacity>
                   </View>
@@ -55,45 +57,45 @@ export default class Amount extends React.Component {
                 <Text style={styles.greeting}>Choose an amount:</Text>
               </View>
                 <View style={styles.container3}>
-                  <View style={styles.button}>
+                  <View >
                     <TouchableOpacity onPress={() => navigate('Confirm', {donation: 5})}>
-                      <View style={styles.button}>
-                        <Text style={styles.buttonText}>$5</Text>
+                      <View >
+                        <Text style={button}>$5</Text>
                       </View>
                     </TouchableOpacity>
                   </View>
-                  <View style={styles.button}>
+                  <View >
                     <TouchableOpacity onPress={() => navigate('Confirm', {donation: 10})}>
-                      <View style={styles.button}>
-                        <Text style={styles.buttonText}>$10</Text>
+                      <View >
+                        <Text style={button}>$10</Text>
                       </View>
                     </TouchableOpacity>
                   </View>
-                  <View style={styles.button}>
+                  <View >
                     <TouchableOpacity onPress={() => navigate('Confirm', {donation: 20})}>
-                      <View style={styles.button}>
-                        <Text style={styles.buttonText}>$20</Text>
+                      <View >
+                        <Text style={button}>$20</Text>
                       </View>
                     </TouchableOpacity>
                   </View>
-                  <View style={styles.button}>
+                  <View >
                     <TouchableOpacity onPress={() => navigate('Confirm', {donation: 50})}>
-                      <View style={styles.button}>
-                        <Text style={styles.buttonText}>$50</Text>
+                      <View >
+                        <Text style={button}>$50</Text>
                       </View>
                     </TouchableOpacity>
                   </View>
-                  <View style={styles.button}>
+                  <View >
                     <TouchableOpacity onPress={() => navigate('Confirm', {donation: 100})}>
-                      <View style={styles.button}>
-                        <Text style={styles.buttonText}>$100</Text>
+                      <View >
+                        <Text style={button}>$100</Text>
                       </View>
                     </TouchableOpacity>
                   </View>
-                  <View style={styles.button}>
+                  <View >
                     <TouchableOpacity onPress={this.showOther}>
-                      <View style={styles.button}>
-                        <Text style={styles.buttonText}>Other</Text>
+                      <View >
+                        <Text style={button}>Other</Text>
                       </View>
                     </TouchableOpacity>
                   </View>
