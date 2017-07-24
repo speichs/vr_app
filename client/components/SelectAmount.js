@@ -11,6 +11,8 @@ import Custom from './Custom';
 import Select from './Select';
 
 export default class Amount extends React.Component {
+  static navigationOptions = { header:null}
+
   constructor(props) {
     super(props);
     this.state = {
@@ -32,19 +34,27 @@ export default class Amount extends React.Component {
         {
           this.state.show
             ? <View>
+              <View style = {styles.container4}>
                 <Text style={styles.greeting}>Specify an amount:</Text>
+              </View>
+              <View style = {styles.container5}>
                 <TextInput style={styles.amount} placeholder="$" onChangeText={(text) => this.setState({text})}/>
+              </View>
+              <View style = {styles.container6}>
                 <View style={styles.button}>
-                  <TouchableOpacity onPress={() => navigate('Confirm', {donation: this.state.text})}>
-                    <View style={styles.button}>
-                      <Text style={styles.buttonText}>Donate now!</Text>
-                    </View>
-                  </TouchableOpacity>
+                    <TouchableOpacity onPress={() => navigate('Confirm', {donation: this.state.text})}>
+                      <View style={styles.button}>
+                        <Text style={styles.buttonText}>Donate now!</Text>
+                      </View>
+                    </TouchableOpacity>
+                  </View>
                 </View>
               </View>
-            : <View style={styles.container}>
+            : <View >
+              <View style={styles.container2}>
                 <Text style={styles.greeting}>Choose an amount:</Text>
-                <View style={styles.donateContainer}>
+              </View>
+                <View style={styles.container3}>
                   <View style={styles.button}>
                     <TouchableOpacity onPress={() => navigate('Confirm', {donation: 5})}>
                       <View style={styles.button}>
@@ -129,10 +139,28 @@ const styles = StyleSheet.create({
     backgroundColor: '#f4e375',
     borderRadius: 25,
   },
-  donateContainer: {
+  container2: {
+    flex: 1,
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+  },
+  container3: {
     flex: 1,
     flexWrap: 'wrap',
     flexDirection: 'row',
+    alignItems: 'flex-start',
+  },
+  container4: {
+    flex:1,
+    flexDirection: 'row',
+    alignItems: 'flex-end',
+  },
+  container5: {
+    flex:1,
     alignItems: 'center',
-  }
+    justifyContent: 'center',
+  },
+  container6: {
+    flex:1,
+  },
 });

@@ -7,9 +7,6 @@ import fonts from '../config/fonts'
 
 export default class Start extends React.Component {
   static navigationOptions = { header:null}
-  addAmount = ()=>{
-    this.props.navigation.navigate('Amount')
-  }
 
   render() {
     const { navigate } = this.props.navigation;
@@ -20,9 +17,7 @@ export default class Start extends React.Component {
           <Text style={styles.greeting}>Want to help?</Text>
           <View>
             <TouchableOpacity  onPress={
-              // () => navigate('Amount')}
-             ()=> Alert.alert('Please see a representative for further assistance')
-           }
+              () => navigate('SelectAmount')}
             >
               <View>
                 <Text style={styles.buttonText}> Donate now!</Text>
