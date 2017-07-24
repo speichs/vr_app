@@ -4,6 +4,7 @@ import { StackNavigator } from 'react-navigation';
 import colors from '../config/colors';
 import fonts from '../config/fonts';
 import button from '../assets/buttons/buttons';
+import titleFont from '../assets/font/font';
 
 
 export default class Start extends React.Component {
@@ -15,7 +16,7 @@ export default class Start extends React.Component {
       <View style={styles.container}>
         <StatusBar hidden={true} />
         <View style={styles.subcontainer1}>
-          <Text style={styles.greeting}>Want to help?</Text>
+          <Text style={titleFont}>Want to help?</Text>
           <View>
             <TouchableOpacity  onPress={
               () => navigate('SelectAmount')}

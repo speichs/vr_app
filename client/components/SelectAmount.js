@@ -9,6 +9,7 @@ import {
   View
 } from 'react-native';
 import button from '../assets/buttons/buttons';
+import titleFont from '../assets/font/font';
 import colors from '../config/colors';
 import fonts from '../config/fonts';
 
@@ -83,7 +84,7 @@ export default class Amount extends React.Component {
             ?
               <View>
                 <View style={styles.container4}>
-                  <Text style={styles.greeting}>Specify an amount:</Text>
+                  <Text style={titleFont}>Specify an amount:</Text>
                   <TextInput style={styles.amount} placeholder="$" placeholderTextColor = {colors.yellow} onChangeText={(text) => this.setState({text})} value={this.state.text}/>
                   <TouchableOpacity onPress={() => navigate('Confirm', {donation: this.state.text})}>
                   <Text style={button}>Donate now!</Text>
@@ -101,7 +102,7 @@ export default class Amount extends React.Component {
               </View>
             : <View >
               <View style={styles.container2}>
-                <Text style={styles.greeting}>Choose an amount:</Text>
+                <Text style={titleFont}>Choose an amount:</Text>
               </View>
                 <View style={styles.container3}>
                   <View style={styles.buttonMargin}>
