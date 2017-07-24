@@ -42,7 +42,7 @@ export default class Amount extends React.Component {
               <View>
                 <View style={styles.container4}>
                   <Text style={styles.greeting}>Specify an amount:</Text>
-                  <TextInput style={styles.amount} keyboardType= 'phone-pad' placeholder=" $" placeholderTextColor = {colors.yellow} onChangeText={(text) => this.setState({text})} autoFocus={true} />
+                  <TextInput style={styles.amount} KeyboardType= {"numeric"} placeholder="$" placeholderTextColor = {colors.yellow} onChangeText={(text) => this.setState({text})} autoFocus={true} />
                   <TouchableOpacity onPress={() => navigate('Confirm', {donation: this.state.text})}>
                   <Text style={button}>Donate now!</Text>
                   </TouchableOpacity>
@@ -125,9 +125,10 @@ const styles = StyleSheet.create({
     color: colors.white,
   },
   amount: {
-    fontSize: 30,
-    height: 40,
-    width: 200,
+    flex: 3,
+    fontSize: 60,
+    height: 120,
+    textAlign: 'center',
     color: colors.yellow,
     fontFamily: fonts.MontserratThin,
     // borderWidth: 2,
@@ -157,12 +158,14 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
   },
   container4: {
-    flex:1,
+    flex:2,
     alignItems: 'center',
     justifyContent: 'center',
+    paddingTop: 30,
+    // justifyContent: 'space-between',
   },
   container5: {
-    flex:2,
+    flex:3,
   },
   buttonMargin: {
     minWidth: 100,
