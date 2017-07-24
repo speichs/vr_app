@@ -6,7 +6,20 @@ import colors from '../config/colors';
 import fonts from '../config/fonts';
 
 export default class Confirm extends React.Component {
-  static navigationOptions = {header:null}
+  static navigationOptions = {
+  headerStyle: {
+    height: 25,
+    backgroundColor: colors.darkgray,
+  },
+  headerBackTitleStyle: {
+    fontFamily: fonts.MontserratLight
+  },
+  headerTintColor: colors.yellow,
+  headerTitleStyle: {
+    fontFamily: fonts.MontserratLight,
+   },
+};
+
 
   constructor(props) {
     super(props);
@@ -44,7 +57,7 @@ export default class Confirm extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#3a3b3e',
+    backgroundColor: colors.darkgray,
     alignItems: 'center',
     justifyContent: 'flex-end',
   },
