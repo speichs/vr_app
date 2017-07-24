@@ -46,7 +46,10 @@ let model = {
 
 
 export default class Amount extends React.Component {
-  static navigationOptions = {header:null}
+  static navigationOptions = {
+    header:null,
+    title: 'BACK',
+  }
 
   constructor(props) {
     super(props);
@@ -164,7 +167,7 @@ export default class Amount extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#3a3b3e',
+    backgroundColor: colors.darkgray,
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'column'
@@ -181,18 +184,12 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: colors.yellow,
     fontFamily: fonts.MontserratThin,
-    // borderWidth: 2,
-    // borderColor: colors.yellow,
-    // borderBottomWidth: 10,
-    // borderBottomColor: colors.yellow,
   },
   button: {
     marginTop: 20,
     marginBottom: 20,
     marginRight: 30,
     marginLeft: 30,
-    // height: 20,
-    // width: 40,
     backgroundColor: colors.yellow,
     borderRadius: 25,
   },
@@ -212,7 +209,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     paddingTop: 30,
-    // justifyContent: 'space-between',
   },
   container5: {
     flex:3,
