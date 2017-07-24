@@ -18,14 +18,23 @@ export default class Confirm extends React.Component {
     const { navigate } = this.props.navigation;
     return (
       <View style={styles.container}>
-        <Text style={titleFont}>Your Donation: ${this.props.navigation.state.params.donation}</Text>
-        <View style={styles.marginFix}>
-          <Text style={titleFont}>To: {this.state.organization}</Text>
-        </View>
-        <View style={styles.button}>
-          <TouchableOpacity  onPress={() => navigate('Thanks')}>
+        <View style={styles.container3}>
+
+          <Text style={titleFont}>Your Donation: ${this.props.navigation.state.params.donation}</Text>
+          <View style={styles.marginFix}>
+            <Text style={titleFont}>To: {this.state.organization}</Text>
+          </View>
+          <View style={styles.button}>
+            <TouchableOpacity  onPress={() => navigate('Thanks')}>
               <Text style={button}>Pay Now</Text>
-          </TouchableOpacity>
+            </TouchableOpacity>
+          </View>
+        </View>
+        <View style={styles.container2}>
+          <Text style={styles.footer}>Powered By:
+            <Text style={styles.garage}> REALITY GARAGE
+            </Text>
+          </Text>
         </View>
       </View>
     );
@@ -37,9 +46,28 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#3a3b3e',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-end',
   },
   marginFix: {
     marginTop: -20,
+  },
+  footer: {
+    fontSize: 15,
+    fontFamily: fonts.MontserratThin,
+    color: colors.white,
+    paddingBottom: 10
+  },
+  garage: {
+    fontFamily: fonts.MontserratLight,
+  },
+  container2: {
+    flex:1,
+    justifyContent: 'flex-end'
+  },
+  container3: {
+    flex:2,
+    justifyContent: 'flex-end',
+    alignItems: 'center'
+
   }
 });

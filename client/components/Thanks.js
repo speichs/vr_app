@@ -18,7 +18,16 @@ export default class Start extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={titleFont}> Thanks for donating, {this.state.name}!</Text>
+        <View style={styles.container2}>
+
+          <Text style={titleFont}> Thanks for donating, {this.state.name}!</Text>
+        </View>
+        <View style={styles.container3}>
+          <Text style={styles.footer}>Powered By:
+            <Text style={styles.garage}> REALITY GARAGE
+            </Text>
+          </Text>
+        </View>
       </View>
     );
   }
@@ -32,4 +41,21 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     flexDirection: 'column',
   },
+  footer: {
+    fontSize: 15,
+    fontFamily: fonts.MontserratThin,
+    color: colors.white,
+  },
+  garage: {
+    fontFamily: fonts.MontserratLight,
+  },
+  container2: {
+    flex: 1,
+    justifyContent: 'flex-end'
+  },
+  container3: {
+    flex:1,
+    justifyContent: 'flex-end',
+    paddingBottom: 10
+  }
 });
