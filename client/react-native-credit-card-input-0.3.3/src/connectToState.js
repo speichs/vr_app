@@ -80,9 +80,9 @@ export default function connectToState(CreditCardInput) {
         "number",
         "expiry",
         requiresCVC ? "cvc" : null,
+        requiresPostalCode ? "postalCode" : null,
         requiresName ? "name" : null,
         requiresEmail ? "email" : null,
-        requiresPostalCode ? "postalCode" : null,
       ]);
     };
 
@@ -94,7 +94,7 @@ export default function connectToState(CreditCardInput) {
     };
 
     _focusNextField = field => {
-      // if (field === "email") return;
+      if (field === "name") return;
       // Should not focus to the next field after name (e.g. when requiresName & requiresPostalCode are true
       // because we can't determine if the user has completed their name or not)
 
