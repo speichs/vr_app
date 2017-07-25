@@ -33,11 +33,12 @@ export default class Card extends React.Component {
     var stripe_url = 'https://api.stripe.com/v1/'
     var secret_key = 'pk_test_zNnQiNYcPwaufUQMAWaN6fbC'
     var cardDetails = {
-      "card[number]": 4242424242424242,
-      "card[exp_month]": 10,
-      "card[exp_year]": 20,
-      "card[cvc]": 334
+      "card[number]":this.state.form.values.number,
+      "card[exp_month]":this.state.form.values.expiry.substring(0,2),
+      "card[exp_year]":this.state.form.values.expiry.substring(3,5),
+      "card[cvc]":this.state.form.values.cvc
     }
+
     var formBody = [];
     for (var property in cardDetails) {
       var encodedKey = encodeURIComponent(property);
@@ -54,7 +55,21 @@ export default class Card extends React.Component {
         'Authorization': 'Bearer ' + 'pk_test_zNnQiNYcPwaufUQMAWaN6fbC'
       },
       body: formBody
-    }).then(result=>result.json()).then(result=>console.log(result.id))
+    }).then(result=>result.json()).then(result=>{
+      //console.log(result.id)
+      let obj = {
+        id: result.id
+      }
+
+      fetch('http://localhost:3000', {
+        method: 'post',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(obj)
+      }).then(result=>result.json()).then(result=>console.log(result))
+    })
   }
 
   // handleFirstName = (text) =>{
@@ -75,11 +90,7 @@ export default class Card extends React.Component {
       <View>
         <CreditCardInput onChange={this.onChange} />
         <View>
-          <TouchableOpacity  onPress={
-           () => navigate('Card')}
-        //    ()=> Alert.alert('Please see a representative for further assistance')
-        //  }
-          >
+          <TouchableOpacity  onPress={this.handleClick}>
             <View>
               <Text style={styles.buttonText}> Donate now!</Text>
             </View>
