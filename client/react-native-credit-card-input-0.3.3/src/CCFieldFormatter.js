@@ -1,5 +1,4 @@
 import valid from "card-validator";
-import email_valid from 'email-validator';
 import { removeNonNumber, removeLeadingSpaces } from "./Utilities";
 import pick from "lodash.pick";
 
@@ -53,8 +52,9 @@ export default class CCFieldFormatter {
     const maxCVCLength = card.code.size;
     return limitLength(removeNonNumber(cvc), maxCVCLength);
   };
+
   _formatEmail = (email) => {
     const cleaned = removeLeadingSpaces(email);
-    if(email_valid.validate(cleaned)) {return cleaned};
+    return cleaned;
   }
 }

@@ -29,6 +29,7 @@ export default function connectToState(CreditCardInput) {
       requiresPostalCode: PropTypes.bool,
       requiresEmail: PropTypes.bool,
       validatePostalCode: PropTypes.func,
+      validateEmail: PropTypes.func,
     };
 
     static defaultProps = {
@@ -42,6 +43,11 @@ export default function connectToState(CreditCardInput) {
       validatePostalCode: (postalCode = "") => {
         return postalCode.match(/^\d{5}$/) ? "valid" :
                postalCode.length > 5 ? "invalid" :
+               "incomplete";
+      },
+      validateEmail: (email = "") => {
+        return email.includes('@') ? "valid" :
+               email.includes('.') ? "valid" :
                "incomplete";
       },
     };
@@ -63,7 +69,7 @@ export default function connectToState(CreditCardInput) {
       const newValues = { ...this.state.values, ...values };
       const displayedFields = this._displayedFields();
       const formattedValues = (new CCFieldFormatter(displayedFields)).formatValues(newValues);
-      const validation = (new CCFieldValidator(displayedFields, this.props.validatePostalCode)).validateValues(formattedValues);
+      const validation = (new CCFieldValidator(displayedFields, this.props.validatePostalCode, this.props.validateEmail)).validateValues(formattedValues);
       const newState = { values: formattedValues, ...validation };
 
       this.setState(newState);

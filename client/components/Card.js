@@ -25,8 +25,9 @@ export default class Card extends React.Component {
           name:"",
           postalCode: "",
           email: "",
-        }
-      }
+        },
+        valid: false,
+      },
     };
   }
 
@@ -82,7 +83,7 @@ export default class Card extends React.Component {
 
 
 
-          <TouchableOpacity onPress = {() => navigate('Thanks')}>
+          <TouchableOpacity disabled={!this.state.form.valid} onPress = {() => navigate('Thanks')}>
           <Text style={button}>Submit</Text>
           </TouchableOpacity>
         </View>
