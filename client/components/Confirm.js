@@ -37,7 +37,7 @@ export default class Confirm extends React.Component {
             <Text style={titleFont}>To: {this.state.organization}</Text>
           </View>
           <View style={styles.button}>
-            <TouchableOpacity  onPress={() => navigate('Card')}>
+            <TouchableOpacity  onPress={() => navigate('Card',{donation: this.props.navigation.state.params.donation})}>
               <Text style={button}>Pay Now</Text>
             </TouchableOpacity>
           </View>
