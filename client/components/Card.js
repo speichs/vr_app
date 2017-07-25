@@ -7,7 +7,6 @@ import { StackNavigator } from 'react-navigation';
 import button from '../assets/buttons/buttons';
 import colors from '../config/colors';
 import fonts from '../config/fonts';
-// import {CreditCardInput} from 'react-native-credit-card-input';
 import {CreditCardInput} from '../react-native-credit-card-input-0.3.3/src';
 
 export default class Card extends React.Component {
@@ -33,13 +32,11 @@ export default class Card extends React.Component {
 
   static navigationOptions = {header:null}
   addAmount = ()=>{
-    console.log('clicked', this.props.navigation.navigate);
     this.props.navigation.navigate('Amount')
   }
 
   onChange = (form) => {
    this.setState({form: form});
-   console.log('state', this.state.form);
  }
 
   handleClick = () =>{
@@ -76,20 +73,15 @@ export default class Card extends React.Component {
       <View style={styles.container}>
         <StatusBar hidden={true} />
         <View>
-        <View style = {styles.container1}>
-        <CreditCardInput onChange={this.onChange} />
+          <View style = {styles.container1}>
+            <CreditCardInput onChange={this.onChange} />
+          </View>
+          <View style={styles.container2}>
+            <TouchableOpacity disabled={!this.state.form.valid} onPress = {() => navigate('Thanks', {name: this.state.form.values.name})}>
+              <Text style={button}>Submit</Text>
+            </TouchableOpacity>
+          </View>
         </View>
-        <View style={styles.container2}>
-
-
-
-          <TouchableOpacity disabled={!this.state.form.valid} onPress = {() => navigate('Thanks', {name: this.state.form.values.name})}>
-          <Text style={button}>Submit</Text>
-          </TouchableOpacity>
-        </View>
-        </View>
-
-
       </View>
     );
   }
