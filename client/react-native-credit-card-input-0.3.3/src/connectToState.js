@@ -94,7 +94,7 @@ export default function connectToState(CreditCardInput) {
     };
 
     _focusNextField = field => {
-      if (field === "name") return;
+      // if (field === "email") return;
       // Should not focus to the next field after name (e.g. when requiresName & requiresPostalCode are true
       // because we can't determine if the user has completed their name or not)
 
