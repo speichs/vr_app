@@ -1,18 +1,25 @@
 import React from 'react';
-import { StyleSheet, Text, Button, Alert, TouchableOpacity, View, StatusBar, DatePickerIOS } from 'react-native';
-
-import { FormLabel, FormInput, FormValidationMessage } from 'react-native-elements'
-
+import { StyleSheet, Text, Button, Alert, TouchableOpacity, View, StatusBar, DatePickerIOS, ScrollView } from 'react-native';
+import { CreditCardInput } from "react-native-credit-card-input";
 import { StackNavigator } from 'react-navigation';
 import colors from '../config/colors';
 import fonts from '../config/fonts';
 
 export default class Card extends React.Component {
-  constructor(props){
-    super(props)
+  constructor(props) {
+    super(props);
     this.state = {
-
-    }
+      name: "Shannon",
+      email: "me@this.com",
+      ZIP: '80302',
+      form: {
+        values: {
+          number: "",
+          expiry: "",
+          cvc: "",
+        }
+      }
+    };
   }
 
   static navigationOptions = { header:null}
@@ -50,38 +57,38 @@ export default class Card extends React.Component {
     }).then(result=>result.json()).then(result=>console.log(result.id))
   }
 
-  handleFirstName = (e) =>{
-    console.log(e.target)
-  }
+  // handleFirstName = (text) =>{
+  //   console.log(text)
+  // }
+
+
+  onChange = (form) => {
+   this.setState({form: form});
+   console.log('state', this.state.form);
+ }
+
+
+
 
   render() {
-    const { navigate } = this.props.navigation;
-    return (
-      <View style={styles.container}>
-        <StatusBar hidden={true} />
+    return(
+      <View>
+        <CreditCardInput onChange={this.onChange} />
         <View>
-          <FormLabel>First Name</FormLabel>
-          <FormInput ref='forminput' textInputRef='firstName' onChange={this.handleFirstName}></FormInput>
-
-          <FormLabel>Last Name</FormLabel>
-          <FormInput></FormInput>
-
-          <FormLabel>Credit Card Number</FormLabel>
-          <FormInput></FormInput>
-
-          <FormLabel>Exp</FormLabel>
-          <FormInput></FormInput>
-
-          <FormLabel>CVC</FormLabel>
-          <FormInput></FormInput>
-
-          <FormLabel>Zip Code</FormLabel>
-          <FormInput></FormInput>
+          <TouchableOpacity  onPress={
+           () => navigate('Card')}
+        //    ()=> Alert.alert('Please see a representative for further assistance')
+        //  }
+          >
+            <View>
+              <Text style={styles.buttonText}> Donate now!</Text>
+            </View>
+          </TouchableOpacity>
         </View>
-
-
       </View>
+
     );
+
   }
 }
 
@@ -107,10 +114,10 @@ const styles = StyleSheet.create({
   buttonText: {
     fontSize: 20,
     fontFamily: fonts.MontserratThin,
-    color: colors.yellow,
+    color: colors.blue,
     borderStyle: 'solid',
     borderWidth: 2,
-    borderColor: colors.yellow,
+    borderColor: colors.blue,
     padding: 12,
     borderRadius: 25,
   },
