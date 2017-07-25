@@ -29,6 +29,7 @@ export default class CCFieldFormatter {
       cvc: this._formatCVC(values.cvc, card),
       name: removeLeadingSpaces(values.name),
       postalCode: removeNonNumber(values.postalCode),
+      // email: this._formatEmail(values.email),
     }, this._displayedFields);
   };
 
@@ -51,4 +52,12 @@ export default class CCFieldFormatter {
     const maxCVCLength = card.code.size;
     return limitLength(removeNonNumber(cvc), maxCVCLength);
   };
+
+  // _formatEmail = (email) => {
+  //   if(!email || email.trim()==='') {
+  //   return "must fill out email field";
+  // }
+  // if(!email.includes('@')) {
+  //   return 'Email must be valid';
+  // }
 }
