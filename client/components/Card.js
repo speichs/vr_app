@@ -77,11 +77,7 @@ export default class Card extends React.Component {
         </View>
         <View style={styles.container2}>
 
-          <FormLabel>Email</FormLabel>
-          <FormInput
-          ref='email'
-          placeholder='someone@something.com'
-          onChangeText={(ref) =>{this.setState({email:ref})}}></FormInput>
+          
 
           <TouchableOpacity onPress = {()=>{this.onChange()}}>
           <Text style={button}>Submit</Text>

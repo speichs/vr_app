@@ -84,6 +84,7 @@ export default class CardView extends Component {
     expiry: PropTypes.string,
     cvc: PropTypes.string,
     placeholder: PropTypes.object,
+    email: PropTypes.string,
 
     scale: PropTypes.number,
     fontFamily: PropTypes.string,
@@ -99,6 +100,7 @@ export default class CardView extends Component {
       name: "FULL NAME",
       expiry: "••/••",
       cvc: "•••",
+      email: "JohnSmith@email.com",
     },
 
     scale: 1,
@@ -109,7 +111,7 @@ export default class CardView extends Component {
 
   render() {
     const { focused,
-      brand, name, number, expiry, cvc, customIcons,
+      brand, name, number, expiry, cvc, customIcons, email,
       placeholder, imageFront, imageBack, scale, fontFamily } = this.props;
 
     const Icons = { ...defaultIcons, ...customIcons };

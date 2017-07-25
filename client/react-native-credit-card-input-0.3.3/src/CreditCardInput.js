@@ -37,6 +37,7 @@ const CARD_NUMBER_INPUT_WIDTH = Dimensions.get("window").width - EXPIRY_INPUT_WI
 const NAME_INPUT_WIDTH = CARD_NUMBER_INPUT_WIDTH;
 const PREVIOUS_FIELD_OFFSET = 40;
 const POSTAL_CODE_INPUT_WIDTH = 120;
+const EMAIL_INPUT_WIDTH = 300;
 
 /* eslint react/prop-types: 0 */ // https://github.com/yannickcr/eslint-plugin-react/issues/106
 export default class CreditCardInput extends Component {
@@ -70,6 +71,7 @@ export default class CreditCardInput extends Component {
       expiry: "EXPIRY",
       cvc: "CVC/CCV",
       postalCode: "POSTAL CODE",
+      email: "EMAIL",
     },
     placeholders: {
       name: "Full Name",
@@ -77,6 +79,7 @@ export default class CreditCardInput extends Component {
       expiry: "MM/YY",
       cvc: "CVC",
       postalCode: "34567",
+      email: "JohnSmith@email.com",
     },
     inputContainerStyle: {
       borderBottomWidth: 1,
@@ -133,8 +136,8 @@ export default class CreditCardInput extends Component {
   render() {
     const {
       cardImageFront, cardImageBack, inputContainerStyle,
-      values: { number, expiry, cvc, name, type }, focused,
-      allowScroll, requiresName, requiresCVC, requiresPostalCode,
+      values: { number, expiry, cvc, name, email, type }, focused,
+      allowScroll, requiresName, requiresCVC, requiresPostalCode, requiresEmail,
       cardScale, cardFontFamily, cardBrandIcons,
     } = this.props;
 
@@ -150,7 +153,9 @@ export default class CreditCardInput extends Component {
             name={requiresName ? name : " "}
             number={number}
             expiry={expiry}
-            cvc={cvc} />
+            cvc={cvc}
+            email = {email}
+             />
         <ScrollView ref="Form"
             horizontal
             keyboardShouldPersistTaps='always'
@@ -171,6 +176,10 @@ export default class CreditCardInput extends Component {
           { requiresPostalCode &&
             <CCInput {...this._inputProps("postalCode")}
                 containerStyle={[s.inputContainer, inputContainerStyle, { width: POSTAL_CODE_INPUT_WIDTH }]} /> }
+          { requiresEmail &&
+            <CCInput {...this._inputProps("email")}
+                keyboardType="default"
+                containerStyle={[s.inputContainer, inputContainerStyle, { width: EMAIL_INPUT_WIDTH }]} /> }
         </ScrollView>
       </View>
     );
