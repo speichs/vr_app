@@ -7,18 +7,24 @@ import { StackNavigator } from 'react-navigation';
 import button from '../assets/buttons/buttons';
 import colors from '../config/colors';
 import fonts from '../config/fonts';
+// import {CreditCardInput} from 'react-native-credit-card-input';
+import {CreditCardInput} from '../react-native-credit-card-input-0.3.3/src';
 
 export default class Card extends React.Component {
   constructor(props){
     super(props)
     this.state = {
-        firstName: '',
-        lastName: '',
-        cardNumber: '',
-        exp: '',
-        cvc: '',
-        zip: '',
-    }
+      name: "",
+      email: "",
+      zip: '',
+      form: {
+        values: {
+          number: "",
+          expire: "",
+          cvc: "",
+        }
+      }
+    };
   }
 
   static navigationOptions = {header:null}
@@ -27,6 +33,10 @@ export default class Card extends React.Component {
     this.props.navigation.navigate('Amount')
   }
 
+  onChange = (form) => {
+   this.setState({form: form});
+   console.log('state', this.state.form);
+ }
 
   handleClick = () =>{
     var stripe_url = 'https://api.stripe.com/v1/'
@@ -56,57 +66,27 @@ export default class Card extends React.Component {
     }).then(result=>result.json()).then(result=>console.log(result.id))
   }
 
-  handleFirstName = () =>{
-    // // console.log(text);
-    // this.setState({firstName: text});
-    console.log(this.state);
-  }
-
   render() {
     const { navigate } = this.props.navigation;
     return (
       <View style={styles.container}>
         <StatusBar hidden={true} />
         <View>
-          <FormLabel>First Name</FormLabel>
-          <FormInput
-             ref='firstName'
-             placeholder='First Name'
-             onChangeText={(ref) =>{this.setState({firstName:ref})}}></FormInput>
+        <View style = {styles.container1}>
+        <CreditCardInput onChange={this.onChange} />
+        </View>
+        <View style={styles.container2}>
 
-          <FormLabel>Last Name</FormLabel>
+          <FormLabel>Email</FormLabel>
           <FormInput
-          ref='lastName'
-          placeholder='Last Name'
-          onChangeText={(ref) =>{this.setState({lastName:ref})}}></FormInput>
+          ref='email'
+          placeholder='someone@something.com'
+          onChangeText={(ref) =>{this.setState({email:ref})}}></FormInput>
 
-          <FormLabel>Credit Card Number</FormLabel>
-          <FormInput
-          ref='cardNumber'
-          placeholder='Credit Card Number'
-          onChangeText={(ref) =>{this.setState({cardNumber:ref})}}></FormInput>
-
-          <FormLabel>Exp</FormLabel>
-          <FormInput
-          ref='exp'
-          placeholder='Expiration Date'
-          onChangeText={(ref) =>{this.setState({exp:ref})}}></FormInput>
-
-          <FormLabel>CVC</FormLabel>
-          <FormInput
-          ref='cvc'
-          placeholder='CVC'
-          onChangeText={(ref) =>{this.setState({cvc: ref})}}></FormInput>
-
-          <FormLabel>Zip Code</FormLabel>
-          <FormInput
-          ref='zip'
-          placeholder='Zip Code'
-          onChangeText={(ref) =>{this.setState({zip: ref})}}></FormInput>
-
-          <TouchableOpacity onPress = {()=>{this.handleFirstName()}}>
+          <TouchableOpacity onPress = {()=>{this.onChange()}}>
           <Text style={button}>Submit</Text>
           </TouchableOpacity>
+        </View>
         </View>
 
 
@@ -122,6 +102,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'column',
+  },
+  container1: {
+    flex:1,
+  },
+  container2: {
+    flex: 2,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   subcontainer1: {
     flex: 2,
