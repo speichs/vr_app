@@ -10,13 +10,35 @@ import titleFont from '../assets/font/font';
 export default class Start extends React.Component {
   static navigationOptions = { header:null}
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      organization: 'Wildlife Protection Solutions',
+      donation: ''
+    };
+  }
+
+  componentDidMount(){
+    fetch('http://localhost:5000/', {
+      method: 'get',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      }
+    }).then(result=>result.json()).then(result=>{
+      console.log('hello');
+      let amount = result.amount[0];
+      this.setState({donation: amount})})
+  }
+
+
   render() {
     const { navigate } = this.props.navigation;
     return (
       <View style={styles.container}>
         <StatusBar hidden={true} />
         <View style={styles.subcontainer1}>
-          <Text style={titleFont}>Want to help?</Text>
+          <Text style={titleFont}>Want to help? g {this.state.donation} </Text>
           <View>
             <TouchableOpacity  onPress={
               () => navigate('SelectAmount')}

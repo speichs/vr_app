@@ -7,7 +7,7 @@ import { StackNavigator } from 'react-navigation';
 import button from '../assets/buttons/buttons';
 import colors from '../config/colors';
 import fonts from '../config/fonts';
-import {CreditCardInput} from '../react-native-credit-card-input-0.3.3/src';
+import {CreditCardInput} from 'tasman-credit-card-input';
 
 export default class Card extends React.Component {
   constructor(props){

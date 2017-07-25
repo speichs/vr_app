@@ -5,6 +5,7 @@ import titleFont from '../assets/font/font';
 import colors from '../config/colors';
 import fonts from '../config/fonts';
 
+
 export default class Confirm extends React.Component {
   static navigationOptions = {
   headerStyle: {
@@ -19,7 +20,6 @@ export default class Confirm extends React.Component {
     fontFamily: fonts.MontserratLight,
    },
 };
-
 
   constructor(props) {
     super(props);
