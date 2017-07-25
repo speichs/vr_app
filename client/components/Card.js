@@ -83,7 +83,7 @@ export default class Card extends React.Component {
 
 
 
-          <TouchableOpacity disabled={!this.state.form.valid} onPress = {() => navigate('Thanks')}>
+          <TouchableOpacity disabled={!this.state.form.valid} onPress = {() => navigate('Thanks', {name: this.state.form.values.name})}>
           <Text style={button}>Submit</Text>
           </TouchableOpacity>
         </View>
