@@ -18,7 +18,7 @@ export default class Start extends React.Component {
           <Text style={styles.greeting}>Want to help?</Text>
           <View>
             <TouchableOpacity  onPress={
-              () => navigate('SelectAmount')}
+              () => navigate('Card')}
             >
               <View>
                 <Text style={button}>Donate now!</Text>
