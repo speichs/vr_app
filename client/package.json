@@ -29,6 +29,7 @@
     "react-native-stripe-checkout": "0.0.15",
     "react-native-swiper": "^1.5.4",
     "react-navigation": "^1.0.0-beta.11",
+    "sean-react-native-credit-card-input": "^0.3.3",
     "tipsi-stripe": "^3.3.0"
   },
   "rnpm": {

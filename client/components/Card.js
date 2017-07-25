@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, Button, Alert, TouchableOpacity, View, StatusBar, DatePickerIOS, ScrollView } from 'react-native';
-import { CreditCardInput } from "react-native-credit-card-input";
+import { CreditCardInput } from "sean-react-native-credit-card-input";
 import { StackNavigator } from 'react-navigation';
 import colors from '../config/colors';
 import fonts from '../config/fonts';
@@ -36,7 +36,8 @@ export default class Card extends React.Component {
       "card[number]":this.state.form.values.number,
       "card[exp_month]":this.state.form.values.expiry.substring(0,2),
       "card[exp_year]":this.state.form.values.expiry.substring(3,5),
-      "card[cvc]":this.state.form.values.cvc
+      "card[cvc]":this.state.form.values.cvc,
+      "card[address_zip]":this.state.form.values.postalCode
     }
 
     var formBody = [];
