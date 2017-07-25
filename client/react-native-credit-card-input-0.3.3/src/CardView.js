@@ -105,8 +105,8 @@ export default class CardView extends Component {
 
     scale: 1,
     fontFamily: Platform.select({ ios: "Courier", android: "monospace" }),
-    imageFront: require("../images/card-front.png"),
-    imageBack: require("../images/card-back.png"),
+    imageFront: require("../images/Credit-Card-front.png"),
+    imageBack: require("../images/Credit-Card-back.png"),
   };
 
   render() {
@@ -135,8 +135,9 @@ export default class CardView extends Component {
             flip={shouldFlip}>
           <Image style={[BASE_SIZE, s.cardFace, transform]}
               source={imageFront}>
-              <Image style={[s.icon]}
-                  source={{ uri: Icons[brand] }} />
+              <Text style={[s.baseText, { fontFamily }, s.expiry, !expiry && s.placeholder, focused === "expiry" && s.focused]}>
+                { !expiry ? placeholder.expiry : expiry }
+              </Text>
               <Text style={[s.baseText, { fontFamily }, s.number, !number && s.placeholder, focused === "number" && s.focused]}>
                 { !number ? placeholder.number : number }
               </Text>
@@ -147,9 +148,9 @@ export default class CardView extends Component {
               <Text style={[s.baseText, { fontFamily }, s.expiryLabel, s.placeholder, focused === "expiry" && s.focused]}>
                 MONTH/YEAR
               </Text>
-              <Text style={[s.baseText, { fontFamily }, s.expiry, !expiry && s.placeholder, focused === "expiry" && s.focused]}>
-                { !expiry ? placeholder.expiry : expiry }
-              </Text>
+              <Image style={[s.icon]}
+              source={{ uri: Icons[brand] }} />
+
               { isAmex &&
                   <Text style={[s.baseText, { fontFamily }, s.amexCVC, !cvc && s.placeholder, focused === "cvc" && s.focused]}>
                     { !cvc ? placeholder.cvc : cvc }
