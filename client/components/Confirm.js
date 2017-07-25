@@ -79,6 +79,5 @@ const styles = StyleSheet.create({
     flex:2,
     justifyContent: 'flex-end',
     alignItems: 'center'
-
   }
 });
