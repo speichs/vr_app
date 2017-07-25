@@ -3,30 +3,26 @@ import { StyleSheet, Text, Button, Alert, TouchableOpacity, View, StatusBar } fr
 import { StackNavigator } from 'react-navigation';
 import colors from '../config/colors';
 import fonts from '../config/fonts';
-
 import button from '../assets/buttons/buttons';
 import titleFont from '../assets/font/font';
 
 
 export default class Start extends React.Component {
   static navigationOptions = { header:null}
-
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: 'Elizabeth'
+    }
+  }
   render() {
-    const { navigate } = this.props.navigation;
     return (
       <View style={styles.container}>
-        <StatusBar hidden={true} />
-        <View style={styles.subcontainer1}>
-          <Text style={titleFont}>Want to help?</Text>
-          <View>
-            <TouchableOpacity  onPress={() => navigate('SelectAmount')}>
-              <View>
-                <Text style={button}>Donate now!</Text>
-              </View>
-            </TouchableOpacity>
-          </View>
+        <View style={styles.container2}>
+
+          <Text style={titleFont}> Thanks for donating, {this.state.name}!</Text>
         </View>
-        <View>
+        <View style={styles.container3}>
           <Text style={styles.footer}>Powered By:
             <Text style={styles.garage}> REALITY GARAGE
             </Text>
@@ -45,34 +41,21 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     flexDirection: 'column',
   },
-  subcontainer1: {
-    flex: 2,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  greeting:{
-    fontSize: 60,
-    fontFamily: fonts.MontserratThin,
-    color: colors.white,
-    margin: 20,
-  },
-  buttonText: {
-    fontSize: 20,
-    fontFamily: fonts.MontserratThin,
-    color: colors.yellow,
-    borderStyle: 'solid',
-    borderWidth: 2,
-    borderColor: colors.yellow,
-    padding: 12,
-    borderRadius: 25,
-  },
   footer: {
     fontSize: 15,
     fontFamily: fonts.MontserratThin,
     color: colors.white,
-    paddingBottom: 10,
   },
   garage: {
     fontFamily: fonts.MontserratLight,
+  },
+  container2: {
+    flex: 1,
+    justifyContent: 'flex-end'
+  },
+  container3: {
+    flex:1,
+    justifyContent: 'flex-end',
+    paddingBottom: 10
   }
 });
