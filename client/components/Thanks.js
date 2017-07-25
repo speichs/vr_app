@@ -12,7 +12,7 @@ export default class Start extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: 'Elizabeth'
+      name: this.props.navigation.state.params.name
     }
   }
   render() {
