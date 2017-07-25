@@ -11,7 +11,6 @@ import ReactNative, {
 import CreditCard from "./CardView";
 import CCInput from "./CCInput";
 import { InjectedProps } from "./connectToState";
-import colors from '../../config/colors';
 
 const s = StyleSheet.create({
   container: {
@@ -84,7 +83,7 @@ export default class CreditCardInput extends Component {
     },
     inputContainerStyle: {
       borderBottomWidth: 1,
-      borderBottomColor: colors.yellow,
+      borderBottomColor: "black",
     },
     validColor: "",
     invalidColor: "red",
@@ -170,13 +169,13 @@ export default class CreditCardInput extends Component {
           { requiresCVC &&
             <CCInput {...this._inputProps("cvc")}
                 containerStyle={[s.inputContainer, inputContainerStyle, { width: CVC_INPUT_WIDTH }]} /> }
+          { requiresName &&
+            <CCInput {...this._inputProps("name")}
+                keyboardType="default"
+                containerStyle={[s.inputContainer, inputContainerStyle, { width: NAME_INPUT_WIDTH }]} /> }
           { requiresPostalCode &&
             <CCInput {...this._inputProps("postalCode")}
                 containerStyle={[s.inputContainer, inputContainerStyle, { width: POSTAL_CODE_INPUT_WIDTH }]} /> }
-          { requiresName &&
-            <CCInput {...this._inputProps("name")}
-            keyboardType="default"
-            containerStyle={[s.inputContainer, inputContainerStyle, { width: NAME_INPUT_WIDTH }]} /> }
           { requiresEmail &&
             <CCInput {...this._inputProps("email")}
                 keyboardType="default"
