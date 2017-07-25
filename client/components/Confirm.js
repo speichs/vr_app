@@ -1,9 +1,9 @@
 import React from 'react';
 import { StyleSheet, Text, Button, Alert, TouchableOpacity, View } from 'react-native';
-import button from '../assets/buttons/buttons';
+import styles from '../assets/StyleSheet';
 import titleFont from '../assets/font/font';
-import colors from '../config/colors';
 import fonts from '../config/fonts';
+import colors from '../config/colors';
 
 export default class Confirm extends React.Component {
   static navigationOptions = {
@@ -51,33 +51,3 @@ export default class Confirm extends React.Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: colors.darkgray,
-    alignItems: 'center',
-    justifyContent: 'flex-end',
-  },
-  marginFix: {
-    marginTop: -20,
-  },
-  footer: {
-    fontSize: 15,
-    fontFamily: fonts.MontserratThin,
-    color: colors.white,
-    paddingBottom: 10
-  },
-  garage: {
-    fontFamily: fonts.MontserratLight,
-  },
-  container2: {
-    flex:1,
-    justifyContent: 'flex-end'
-  },
-  container3: {
-    flex:2,
-    justifyContent: 'flex-end',
-    alignItems: 'center'
-  }
-});

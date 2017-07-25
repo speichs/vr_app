@@ -11,7 +11,7 @@ import {
 import button from '../assets/buttons/buttons';
 import titleFont from '../assets/font/font';
 import colors from '../config/colors';
-import fonts from '../config/fonts';
+import styles from '../assets/StyleSheet';
 
 let model = {
     _keys: [],
@@ -163,72 +163,3 @@ export default class Amount extends React.Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: colors.darkgray,
-    alignItems: 'center',
-    justifyContent: 'center',
-    flexDirection: 'column'
-  },
-  greeting: {
-    fontSize: 60,
-    fontFamily: fonts.MontserratThin,
-    color: colors.white,
-  },
-  amount: {
-    flex: 3,
-    fontSize: 60,
-    height: 120,
-    textAlign: 'center',
-    color: colors.yellow,
-    fontFamily: fonts.MontserratThin,
-  },
-  button: {
-    marginTop: 20,
-    marginBottom: 20,
-    marginRight: 30,
-    marginLeft: 30,
-    backgroundColor: colors.yellow,
-    borderRadius: 25,
-  },
-  container2: {
-    flex: 1,
-    justifyContent: 'flex-end',
-    alignItems: 'center',
-  },
-  container3: {
-    flex: 1,
-    flexWrap: 'wrap',
-    flexDirection: 'row',
-    alignItems: 'flex-start',
-  },
-  container4: {
-    flex:2,
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingTop: 30,
-  },
-  container5: {
-    flex:3,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  buttonMargin: {
-    minWidth: 100,
-    margin: 10,
-  },
-  footer: {
-    fontSize: 15,
-    fontFamily: fonts.MontserratThin,
-    color: colors.white,
-    paddingBottom: 35,
-  },
-  garage: {
-    fontFamily: fonts.MontserratLight,
-  },
-  keyboard: {
-    borderWidth: 20,
-  }
-});
