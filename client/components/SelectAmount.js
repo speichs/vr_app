@@ -1,5 +1,5 @@
 import React from 'react'
-import Keyboard from 'react-native-keyboard';
+import Keyboard from 'elizabeth-tas-numpad';
 import {
   StyleSheet,
   Text,
@@ -8,9 +8,8 @@ import {
   TouchableOpacity,
   View
 } from 'react-native';
-import Custom from './Custom';
-import Select from './Select';
 import button from '../assets/buttons/buttons';
+import titleFont from '../assets/font/font';
 import colors from '../config/colors';
 import fonts from '../config/fonts';
 
@@ -47,7 +46,10 @@ let model = {
 
 
 export default class Amount extends React.Component {
-  static navigationOptions = {header:null}
+  static navigationOptions = {
+    header:null,
+    title: 'BACK',
+  }
 
   constructor(props) {
     super(props);
@@ -85,7 +87,7 @@ export default class Amount extends React.Component {
             ?
               <View>
                 <View style={styles.container4}>
-                  <Text style={styles.greeting}>Specify an amount:</Text>
+                  <Text style={titleFont}>Specify an amount:</Text>
                   <TextInput style={styles.amount} placeholder="$" placeholderTextColor = {colors.yellow} onChangeText={(text) => this.setState({text})} value={this.state.text}/>
                   <TouchableOpacity onPress={() => navigate('Confirm', {donation: this.state.text})}>
                   <Text style={button}>Donate now!</Text>
@@ -103,7 +105,7 @@ export default class Amount extends React.Component {
               </View>
             : <View >
               <View style={styles.container2}>
-                <Text style={styles.greeting}>Choose an amount:</Text>
+                <Text style={titleFont}>Choose an amount:</Text>
               </View>
                 <View style={styles.container3}>
                   <View style={styles.buttonMargin}>
@@ -165,7 +167,7 @@ export default class Amount extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#3a3b3e',
+    backgroundColor: colors.darkgray,
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'column'
@@ -182,18 +184,12 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: colors.yellow,
     fontFamily: fonts.MontserratThin,
-    // borderWidth: 2,
-    // borderColor: colors.yellow,
-    // borderBottomWidth: 10,
-    // borderBottomColor: colors.yellow,
   },
   button: {
     marginTop: 20,
     marginBottom: 20,
     marginRight: 30,
     marginLeft: 30,
-    // height: 20,
-    // width: 40,
     backgroundColor: colors.yellow,
     borderRadius: 25,
   },
@@ -213,7 +209,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     paddingTop: 30,
-    // justifyContent: 'space-between',
   },
   container5: {
     flex:3,

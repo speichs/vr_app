@@ -77,9 +77,9 @@ export default class Card extends React.Component {
         </View>
         <View style={styles.container2}>
 
-          
 
-          <TouchableOpacity onPress = {()=>{this.onChange()}}>
+
+          <TouchableOpacity onPress = {() => navigate('Thankss')}>
           <Text style={button}>Submit</Text>
           </TouchableOpacity>
         </View>
