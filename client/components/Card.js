@@ -4,6 +4,7 @@ import { StyleSheet, Text, Button, Alert, TouchableOpacity, View, StatusBar, Dat
 import { FormLabel, FormInput, FormValidationMessage } from 'react-native-elements'
 
 import { StackNavigator } from 'react-navigation';
+import button from '../assets/buttons/buttons';
 import colors from '../config/colors';
 import fonts from '../config/fonts';
 
@@ -55,10 +56,10 @@ export default class Card extends React.Component {
     }).then(result=>result.json()).then(result=>console.log(result.id))
   }
 
-  handleFirstName = (text) =>{
-    console.log(text);
-    this.setState({firstName: text});
-    // console.log(this.state.firstName);
+  handleFirstName = () =>{
+    // // console.log(text);
+    // this.setState({firstName: text});
+    console.log(this.state);
   }
 
   render() {
@@ -71,22 +72,41 @@ export default class Card extends React.Component {
           <FormInput
              ref='firstName'
              placeholder='First Name'
-             onChangeText={(ref) =>{this.handleFirstName(ref)}}></FormInput>
+             onChangeText={(ref) =>{this.setState({firstName:ref})}}></FormInput>
 
           <FormLabel>Last Name</FormLabel>
-          <FormInput></FormInput>
+          <FormInput
+          ref='lastName'
+          placeholder='Last Name'
+          onChangeText={(ref) =>{this.setState({lastName:ref})}}></FormInput>
 
           <FormLabel>Credit Card Number</FormLabel>
-          <FormInput></FormInput>
+          <FormInput
+          ref='cardNumber'
+          placeholder='Credit Card Number'
+          onChangeText={(ref) =>{this.setState({cardNumber:ref})}}></FormInput>
 
           <FormLabel>Exp</FormLabel>
-          <FormInput></FormInput>
+          <FormInput
+          ref='exp'
+          placeholder='Expiration Date'
+          onChangeText={(ref) =>{this.setState({exp:ref})}}></FormInput>
 
           <FormLabel>CVC</FormLabel>
-          <FormInput></FormInput>
+          <FormInput
+          ref='cvc'
+          placeholder='CVC'
+          onChangeText={(ref) =>{this.setState({cvc: ref})}}></FormInput>
 
           <FormLabel>Zip Code</FormLabel>
-          <FormInput></FormInput>
+          <FormInput
+          ref='zip'
+          placeholder='Zip Code'
+          onChangeText={(ref) =>{this.setState({zip: ref})}}></FormInput>
+
+          <TouchableOpacity onPress = {()=>{this.handleFirstName()}}>
+          <Text style={button}>Submit</Text>
+          </TouchableOpacity>
         </View>
 
 
