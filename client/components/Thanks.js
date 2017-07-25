@@ -8,11 +8,11 @@ import titleFont from '../assets/font/font';
 
 
 export default class Start extends React.Component {
-  static navigationOptions = { header:null}
+  static navigationOptions = {header:null}
   constructor(props) {
     super(props);
     this.state = {
-      name: 'Elizabeth'
+      name: this.props.navigation.state.params.name
     }
   }
   render() {

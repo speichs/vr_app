@@ -32,21 +32,19 @@ export default class Confirm extends React.Component {
     return (
       <View style={styles.container}>
         <View style={styles.container3}>
-
           <Text style={titleFont}>Your Donation: ${this.props.navigation.state.params.donation}</Text>
           <View style={styles.marginFix}>
             <Text style={titleFont}>To: {this.state.organization}</Text>
           </View>
           <View style={styles.button}>
-            <TouchableOpacity  onPress={() => navigate('Thanks')}>
+            <TouchableOpacity  onPress={() => navigate('Card')}>
               <Text style={button}>Pay Now</Text>
             </TouchableOpacity>
           </View>
         </View>
         <View style={styles.container2}>
           <Text style={styles.footer}>Powered By:
-            <Text style={styles.garage}> REALITY GARAGE
-            </Text>
+            <Text style={styles.garage}> REALITY GARAGE</Text>
           </Text>
         </View>
       </View>
@@ -81,6 +79,5 @@ const styles = StyleSheet.create({
     flex:2,
     justifyContent: 'flex-end',
     alignItems: 'center'
-
   }
 });
