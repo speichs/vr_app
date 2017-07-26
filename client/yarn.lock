@@ -5163,9 +5163,9 @@ tar@^2.1.1:
     fstream "^1.0.2"
     inherits "2"
 
-tasman-credit-card-input@^3.2.1:
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/tasman-credit-card-input/-/tasman-credit-card-input-3.2.1.tgz#628d415647edad2b9dfc4f9598d2c4224bcb09dc"
+tasman-credit-card-input@^3.2.2:
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/tasman-credit-card-input/-/tasman-credit-card-input-3.2.2.tgz#b89bb90a574a4d591c8156b7a8b50588480a788c"
   dependencies:
     card-validator "^3.0.0"
     lodash.compact "^3.0.1"
