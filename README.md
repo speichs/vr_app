@@ -26,11 +26,11 @@ To see the VR Kiosk donation interface in all its glory, please follow these ste
 ## [Google Drive wireframes link](https://drive.google.com/drive/folders/0BwXfo7CF48C2SjZaU2lRNVhWWFk)
 
 ### Additional Components
--[VR Server](https://github.com/tasmandrake/vr_server)
+- [VR Server](https://github.com/tasmandrake/vr_server)
 
 #### Who are we?
--[Elizabeth Flournoy](https://github.com/emflournoy)
--[Jodie Rigali](https://github.com/jmrigali)
--[Sean Eichenberger](https://github.com/speichs)
--[Shannon Rivers](https://github.com/senbenito)
--[Tasman Drake](https://github.com/tasmandrake) 
+- [Elizabeth Flournoy](https://github.com/emflournoy)
+- [Jodie Rigali](https://github.com/jmrigali)
+- [Sean Eichenberger](https://github.com/speichs)
+- [Shannon Rivers](https://github.com/senbenito)
+- [Tasman Drake](https://github.com/tasmandrake) 
