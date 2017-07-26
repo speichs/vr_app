@@ -7,9 +7,9 @@ In cooperation with and on behalf of [Reality Garage](http://realitygarage.com/)
 To see the VR Kiosk donation interface in all its glory, please follow these steps:
 - Download, Install and Start [Expo](https://expo.io/) on your iOS / Android device...
 - Fork & Clone this repo to your comnputer...
-- ```$ cd client (the app)```
-- ```$ yarn (to install dependencies)```
-- ```$ yarn start (to start hosting the Expo app)```
+- ```$ cd client``` (the app)
+- ```$ yarn``` (to install dependencies)
+- ```$ yarn start``` (to start hosting the Expo app)
 - Scan the QR code when the packager starts...
 - Donate away!
 
