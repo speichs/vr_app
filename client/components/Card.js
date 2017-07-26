@@ -108,6 +108,12 @@ export default class Card extends React.Component {
             </TouchableOpacity>
           </View>
         </View>
+        <View>
+          <Text style={styles.footer}>Powered By:
+            <Text style={styles.garage}> REALITY GARAGE
+            </Text>
+          </Text>
+        </View>
       </View>
     );
   }
@@ -120,6 +126,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'column',
+    paddingTop: 40
   },
   container1: {
     flex:1,
@@ -154,7 +161,7 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontFamily: fonts.MontserratThin,
     color: colors.white,
-    paddingBottom: 10,
+    paddingBottom: 30,
   },
   garage: {
     fontFamily: fonts.MontserratLight,
