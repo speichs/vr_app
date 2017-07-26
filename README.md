@@ -5,10 +5,32 @@ In cooperation with and on behalf of [Reality Garage](http://realitygarage.com/)
 
 ## Want to try it out?
 To see the VR Kiosk donation interface in all its glory, please follow these steps:
-- Fork & Clone this repo...
-- 
+- Download, Install and Start [Expo](https://expo.io/) on your iOS / Android device...
+- Fork & Clone this repo to your comnputer...
+- ```$ cd client (the app)```
+- ```$ yarn (to install dependencies)```
+- ```$ yarn start (to start hosting the Expo app)```
+- Scan the QR code when the packager starts...
+- Donate away!
+
+###This really processes credit cards, so use the Stripe dummy data:
+  -- credit card number = 4242 4242 4242 4242 (required)
+  -- expiration date = 02/22 (required)
+  -- CVV = 222 (required)
+  -- ZIP = 22222 (required)
+  -- name  (required)
+  -- email  (required)
+
 
 ## [Trello PM-tracker public link](https://trello.com/b/NjV8tJT7/vr-app)
 ## [Google Drive wireframes link](https://drive.google.com/drive/folders/0BwXfo7CF48C2SjZaU2lRNVhWWFk)
 
-### Additional Component - [VR Server](https://github.com/tasmandrake/vr_server)
+### Additional Components
+-[VR Server](https://github.com/tasmandrake/vr_server)
+
+#### Who are we?
+-[Elizabeth Flournoy](https://github.com/emflournoy)
+-[Jodie Rigali](https://github.com/jmrigali)
+-[Sean Eichenberger](https://github.com/speichs)
+-[Shannon Rivers](https://github.com/senbenito)
+-[Tasman Drake](https://github.com/tasmandrake)
