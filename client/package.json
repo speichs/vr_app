@@ -27,6 +27,7 @@
     "react-native-keyboard": "^2.0.0",
     "react-native-swiper": "^1.5.4",
     "react-navigation": "^1.0.0-beta.11",
+    "socket.io-client": "^2.0.3",
     "tasman-credit-card-input": "^1.0.1",
     "tipsi-stripe": "^3.3.0"
   },

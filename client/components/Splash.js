@@ -5,6 +5,7 @@ import colors from '../config/colors';
 import fonts from '../config/fonts';
 import button from '../assets/buttons/buttons';
 import titleFont from '../assets/font/font';
+import io from 'socket.io-client';
 
 
 export default class Start extends React.Component {
@@ -12,24 +13,32 @@ export default class Start extends React.Component {
 
   constructor(props) {
     super(props);
+    this.amount = 'dog',
     this.state = {
       organization: 'Wildlife Protection Solutions',
       donation: ''
     };
   }
 
+  // componentWillMount(){
+  //   let socket = io('http://localhost:6000/')
+  //   this.amount = 'sean'
+  //   let second = 'x'
+  //   socket.on('amount', (data)=>{
+  //     second = data;
+  //     return false;
+  //   })
+  //   this.amount = second
+  // }
+
   componentDidMount(){
-    fetch('http://localhost:5000/', {
-      method: 'get',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-      }
-    }).then(result=>result.json()).then(result=>{
-      console.log('hello');
-      let amount = result.amount[0];
-      this.setState({donation: amount})})
+    let that = this
+    let socket = io('http://localhost:6000/')
+    socket.on('amount', function(data){
+      that.setState({donation: data})
+    })
   }
+
 
 
   render() {
