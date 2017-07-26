@@ -1,6 +1,6 @@
 # Reality Garage VR Kiosk donation interface
 
-## In cooperation with and on behalf of [Reality Garage](http://realitygarage.com/), this team used:
+In cooperation with and on behalf of [Reality Garage](http://realitygarage.com/), this team used:
 1.React Native
 2.Stripe payment integration, Socket.io, Node.js/Express.js and PostgreSQL/Knex.js to provide as MVP a secure method for kiosk-users to donate moneys to the VR experience provider (e.g. Wildlife Protection Solutions, Boulder Symphony, etc).
 
