@@ -22,7 +22,7 @@ To see the VR Kiosk donation interface in all its glory, please follow these ste
 - email (required)
 
 
-## [Trello PM-tracker public link](https://trello.com/b/NjV8tJT7/vr-app)
+## [Trello project management tracker public link](https://trello.com/b/NjV8tJT7/vr-app)
 ## [Google Drive wireframes link](https://drive.google.com/drive/folders/0BwXfo7CF48C2SjZaU2lRNVhWWFk)
 
 ### Additional Components
@@ -33,4 +33,4 @@ To see the VR Kiosk donation interface in all its glory, please follow these ste
 -[Jodie Rigali](https://github.com/jmrigali)
 -[Sean Eichenberger](https://github.com/speichs)
 -[Shannon Rivers](https://github.com/senbenito)
--[Tasman Drake](https://github.com/tasmandrake)
+-[Tasman Drake](https://github.com/tasmandrake) 
