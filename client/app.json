@@ -1,5 +1,20 @@
 {
   "expo": {
-    "sdkVersion": "18.0.0"
+    "sdkVersion": "18.0.0",
+    "ios": {
+      "bundleIdentifier": "com.q3.realitygarage"
+    },
+    "android": {
+      "package": "com.q3.realitygarage"
+    },
+    "name": "client",
+    "slug": "client",
+    "version": "0.1.0",
+    "isDetached": true,
+    "detach": {
+      "scheme": "exp3a2e800c0999412c85cca2628e404d90",
+      "iosExpoViewUrl": "https://s3.amazonaws.com/exp-exponent-view-code/ios-v1.17.0-sdk18.0.0-b4aff885-a9a8-4733-9fa9-ec28bef01e15.tar.gz",
+      "androidExpoViewUrl": "https://s3.amazonaws.com/exp-exponent-view-code/android-v1.17.0-sdk18.0.0-4680412d-04c4-47ed-9161-88e01d76be96.tar.gz"
+    }
   }
 }
