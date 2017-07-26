@@ -10,15 +10,21 @@ import {
 import defaultIcons from "./Icons";
 import FlipCard from "react-native-flip-card";
 
-const BASE_SIZE = { width: 300, height: 190 };
+const BASE_SIZE = { width: 325, height: 230 };
 
 const s = StyleSheet.create({
-  cardContainer: {},
-  cardFace: {},
+  cardContainer: {
+    top: 10,
+  },
+  cardFace: {
+    borderRadius: 30,
+    borderWidth: 10,
+    borderColor: "rgba(244, 227, 117, 0.7)"
+  },
   icon: {
     position: "absolute",
-    top: 15,
-    right: 15,
+    top: 25,
+    right: 25,
     width: 60,
     height: 40,
     resizeMode: "contain",
@@ -38,26 +44,26 @@ const s = StyleSheet.create({
     fontSize: 21,
     position: "absolute",
     top: 95,
-    left: 28,
+    left: 38,
   },
   name: {
     fontSize: 16,
     position: "absolute",
-    bottom: 20,
-    left: 25,
+    bottom: 25,
+    left: 30,
     right: 100,
   },
   expiryLabel: {
     fontSize: 9,
     position: "absolute",
     bottom: 40,
-    left: 218,
+    left: 228,
   },
   expiry: {
     fontSize: 16,
     position: "absolute",
     bottom: 20,
-    left: 220,
+    left: 230,
   },
   amexCVC: {
     fontSize: 16,
@@ -133,8 +139,7 @@ export default class CardView extends Component {
             perspective={2000}
             clickable={false}
             flip={shouldFlip}>
-          <Image style={[BASE_SIZE, s.cardFace, transform]}
-              source={imageFront}>
+          <Image style={[BASE_SIZE, s.cardFace, transform]} source={imageFront}>
               <Text style={[s.baseText, { fontFamily }, s.expiry, !expiry && s.placeholder, focused === "expiry" && s.focused]}>
                 { !expiry ? placeholder.expiry : expiry }
               </Text>
