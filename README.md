@@ -13,13 +13,13 @@ To see the VR Kiosk donation interface in all its glory, please follow these ste
 - Scan the QR code when the packager starts...
 - Donate away!
 
-###This really processes credit cards, so use the Stripe dummy data:
-  -- credit card number = 4242 4242 4242 4242 (required)
-  -- expiration date = 02/22 (required)
-  -- CVV = 222 (required)
-  -- ZIP = 22222 (required)
-  -- name  (required)
-  -- email  (required)
+### This really processes credit cards, so use the Stripe dummy data:
+- credit card number = 4242 4242 4242 4242 (required)
+- expiration date = 02/22 (required)
+- CVV = 222 (required)
+- ZIP = 22222 (required)
+- name (required)
+- email (required)
 
 
 ## [Trello PM-tracker public link](https://trello.com/b/NjV8tJT7/vr-app)
