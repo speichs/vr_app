@@ -1028,7 +1028,7 @@ babel-preset-jest@^19.0.0:
   dependencies:
     babel-plugin-jest-hoist "^19.0.0"
 
-babel-preset-react-native-stage-0@1.0.1, babel-preset-react-native-stage-0@^1.0.1:
+babel-preset-react-native-stage-0@1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/babel-preset-react-native-stage-0/-/babel-preset-react-native-stage-0-1.0.1.tgz#d5f5f685575471ef756a49f191b193269f74306e"
   dependencies:
@@ -1847,9 +1847,9 @@ electron-to-chromium@^1.3.16:
   version "1.3.16"
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.16.tgz#d0e026735754770901ae301a21664cba45d92f7d"
 
-elizabeth-tas-numpad@^1.0.6:
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/elizabeth-tas-numpad/-/elizabeth-tas-numpad-1.0.6.tgz#edc0750676a8a8500cf224cdc3b72a9909aa9053"
+elizabeth-tas-numpad@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/elizabeth-tas-numpad/-/elizabeth-tas-numpad-1.1.0.tgz#23856e7204213a4088c9a530aba96b10bf011ccf"
   dependencies:
     expo "^19.0.0"
 
@@ -3463,7 +3463,7 @@ lodash@3.10.1, lodash@^3.5.0:
   version "3.10.1"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
 
-lodash@^4.0.0, lodash@^4.14.0, lodash@^4.14.1, lodash@^4.14.2, lodash@^4.16.6, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.2.1, lodash@^4.3.0, lodash@^4.6.1:
+lodash@^4.0.0, lodash@^4.14.0, lodash@^4.14.1, lodash@^4.16.6, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.2.1, lodash@^4.3.0, lodash@^4.6.1:
   version "4.17.4"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
 
@@ -3997,12 +3997,6 @@ pause@0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/pause/-/pause-0.1.0.tgz#ebc8a4a8619ff0b8a81ac1513c3434ff469fdb74"
 
-payment@^2.0.3, payment@^2.1.3:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/payment/-/payment-2.2.1.tgz#8827394606b20f82677180808fcac40efd6305f9"
-  dependencies:
-    qj "~2.0.0"
-
 pegjs@^0.10.0:
   version "0.10.0"
   resolved "https://registry.yarnpkg.com/pegjs/-/pegjs-0.10.0.tgz#cf8bafae6eddff4b5a7efb185269eaaf4610ddbd"
@@ -4127,10 +4121,6 @@ punycode@^1.4.1:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-1.4.1.tgz#c0d5a63b2718800ad8e1eb0fa5269c84dd41845e"
 
-qj@~2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/qj/-/qj-2.0.0.tgz#054dd3b75ce018728d23a0605f030dfda0bd158a"
-
 qrcode-terminal@^0.11.0:
   version "0.11.0"
   resolved "https://registry.yarnpkg.com/qrcode-terminal/-/qrcode-terminal-0.11.0.tgz#ffc6c28a2fc0bfb47052b47e23f4f446a5fbdb9e"
@@ -4237,10 +4227,6 @@ react-native-elements@^0.15.0:
 react-native-flip-card@^3.3.0:
   version "3.4.1"
   resolved "https://registry.yarnpkg.com/react-native-flip-card/-/react-native-flip-card-3.4.1.tgz#29599ae8bce082e091a2bdec2a982f7ab9a22460"
-
-react-native-keyboard-spacer@^0.3.0:
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/react-native-keyboard-spacer/-/react-native-keyboard-spacer-0.3.1.tgz#9580297ebfd078202dc4c65303d29cda35de67f1"
 
 react-native-keyboard@^2.0.0:
   version "2.0.0"
@@ -5067,10 +5053,6 @@ string-width@^2.0.0, string-width@^2.1.0:
     is-fullwidth-code-point "^2.0.0"
     strip-ansi "^4.0.0"
 
-string@^3.3.3:
-  version "3.3.3"
-  resolved "https://registry.yarnpkg.com/string/-/string-3.3.3.tgz#5ea211cd92d228e184294990a6cc97b366a77cb0"
-
 string_decoder@~0.10.x:
   version "0.10.31"
   resolved "https://registry.yarnpkg.com/string_decoder/-/string_decoder-0.10.31.tgz#62e203bc41766c6c28c9fc84301dab1c5310fa94"
@@ -5180,6 +5162,17 @@ tar@^2.1.1:
     block-stream "*"
     fstream "^1.0.2"
     inherits "2"
+
+tasman-credit-card-input@^3.2.2:
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/tasman-credit-card-input/-/tasman-credit-card-input-3.2.2.tgz#b89bb90a574a4d591c8156b7a8b50588480a788c"
+  dependencies:
+    card-validator "^3.0.0"
+    lodash.compact "^3.0.1"
+    lodash.every "^4.6.0"
+    lodash.pick "^4.4.0"
+    lodash.values "^4.3.0"
+    react-native-flip-card "^3.3.0"
 
 temp@0.8.3:
   version "0.8.3"
