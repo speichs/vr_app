@@ -2,7 +2,7 @@
 
 ## Project Overview:
 In cooperation with and on behalf of [Reality Garage](http://realitygarage.com/), this team used: React Native, Stripe payment integration, Socket.io, Node.js/Express.js and PostgreSQL/Knex.js to provide as MVP a secure method for kiosk-users to donate moneys to the VR experience provider (e.g. Wildlife Protection Solutions, Boulder Symphony, etc).
-### Stretch goals:
+#### Stretch goals:
 - Split payments at server level to multiple payees
 - Create VR 'donation' experience in Unity
 
@@ -15,7 +15,7 @@ To see the VR Kiosk donation interface in all its glory, please follow these ste
 - ```$ yarn start``` (to start hosting the app on Expo)
 - Scan the QR code with your device when the packager starts...
 - Donate away!
-### This really processes credit cards, so feel free to use the Stripe dummy data:
+#### This really processes credit cards, so feel free to use the Stripe dummy data:
 - credit card number = ```4242 4242 4242 4242``` (required)
 - expiration date = ```02/22``` (required)
 - CVV = ```222``` (required)
