@@ -4,7 +4,7 @@ import { StyleSheet, Text, Button, Alert, TouchableOpacity, View, StatusBar, Dat
 import { FormLabel, FormInput, FormValidationMessage } from 'react-native-elements'
 
 import { StackNavigator } from 'react-navigation';
-import button from '../assets/buttons/buttons';
+// import {button, buttonDisabled} from '../assets/buttons/buttons';
 import colors from '../config/colors';
 import fonts from '../config/fonts';
 import {CreditCardInput} from 'tasman-credit-card-input';
@@ -104,7 +104,7 @@ export default class Card extends React.Component {
               this.handleClick()
             }}>
 
-              <Text style={button}>Submit</Text>
+              <Text style={this.state.form.valid ? styles.button : styles.buttonDisabled}>Submit</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -136,27 +136,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  subcontainer1: {
-    flex: 2,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  greeting:{
-    fontSize: 40,
-    fontFamily: fonts.MontserratThin,
-    color: colors.white,
-    margin: 20,
-  },
-  buttonText: {
-    fontSize: 20,
-    fontFamily: fonts.MontserratThin,
-    color: colors.yellow,
-    borderStyle: 'solid',
-    borderWidth: 2,
-    borderColor: colors.yellow,
-    padding: 12,
-    borderRadius: 25,
-  },
   footer: {
     fontSize: 15,
     fontFamily: fonts.MontserratThin,
@@ -165,5 +144,27 @@ const styles = StyleSheet.create({
   },
   garage: {
     fontFamily: fonts.MontserratLight,
-  }
+  },
+  button: {
+    fontSize: 30,
+    fontFamily: fonts.MontserratLight,
+    color: colors.yellow,
+    borderStyle: 'solid',
+    borderWidth: 2,
+    borderColor: colors.yellow,
+    padding: 12,
+    borderRadius: 25,
+    textAlign: 'center',
+  },
+  buttonDisabled: {
+    fontSize: 30,
+    fontFamily: fonts.MontserratLight,
+    color: colors.disabled,
+    borderStyle: 'solid',
+    borderWidth: 2,
+    borderColor: colors.disabled,
+    padding: 12,
+    borderRadius: 25,
+    textAlign: 'center',
+  },
 });
