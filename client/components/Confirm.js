@@ -7,18 +7,9 @@ import fonts from '../config/fonts';
 
 export default class Confirm extends React.Component {
   static navigationOptions = {
-  headerStyle: {
-    height: 25,
-    backgroundColor: colors.darkgray,
-  },
-  headerBackTitleStyle: {
-    fontFamily: fonts.MontserratLight
-  },
-  headerTintColor: colors.yellow,
-  headerTitleStyle: {
-    fontFamily: fonts.MontserratLight,
-   },
-};
+    header:null,
+    title: 'BACK',
+  };
 
 
   constructor(props) {
@@ -36,10 +27,17 @@ export default class Confirm extends React.Component {
           <View style={styles.marginFix}>
             <Text style={titleFont}>To: {this.state.organization}</Text>
           </View>
-          <View style={styles.button}>
+          <View style={styles.container4}>
+            <View style={styles.buttonMargin}>
+            <TouchableOpacity  onPress={() => navigate('SelectAmount')}>
+              <Text style={button}>Another Amount</Text>
+            </TouchableOpacity>
+            </View>
+            <View style={styles.buttonMargin}>
             <TouchableOpacity  onPress={() => navigate('Card',{donation: this.props.navigation.state.params.donation})}>
               <Text style={button}>Pay Now</Text>
             </TouchableOpacity>
+            </View>
           </View>
         </View>
         <View style={styles.container2}>
@@ -79,5 +77,16 @@ const styles = StyleSheet.create({
     flex:2,
     justifyContent: 'flex-end',
     alignItems: 'center'
+  },
+  container4: {
+    flex: 1,
+    flexWrap: 'wrap',
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    marginBottom:15,
+  },
+  buttonMargin: {
+    minWidth: 100,
+    margin: 10,
   }
 });
