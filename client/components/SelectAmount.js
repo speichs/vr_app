@@ -87,20 +87,26 @@ export default class Amount extends React.Component {
             ?
               <View>
                 <View style={styles.container4}>
+                  <View style = {styles.container6}>
                   <Text style={titleFont}>Specify an amount:</Text>
+                  </View>
+                  <View style = {styles.container2}>
                   <TextInput style={styles.amount} placeholder="$" placeholderTextColor = {colors.yellow} onChangeText={(text) => this.setState({text})} value={this.state.text}/>
+                  </View>
+                  <View style={styles.container2}>
                   <TouchableOpacity onPress={() => navigate('Confirm', {donation: this.state.text})}>
                   <Text style={button}>Donate now!</Text>
                   </TouchableOpacity>
+                  </View>
                 </View>
                 <View style = {styles.container5}>
-                <Keyboard
-                style = {styles.keyboard}
-                keyboardType="decimal-pad"
-                onClear={this._handleClear.bind(this)}
-                onDelete={this._handleDelete.bind(this)}
-                onKeyPress={this._handleKeyPress.bind(this)}
-                />
+                  <Keyboard
+                  style = {styles.keyboard}
+                  keyboardType="decimal-pad"
+                  onClear={this._handleClear.bind(this)}
+                  onDelete={this._handleDelete.bind(this)}
+                  onKeyPress={this._handleKeyPress.bind(this)}
+                  />
                 </View>
               </View>
             : <View >
@@ -178,9 +184,10 @@ const styles = StyleSheet.create({
     color: colors.white,
   },
   amount: {
-    flex: 3,
+    flex: 2,
     fontSize: 60,
-    height: 120,
+    height: 200,
+    width: 400,
     textAlign: 'center',
     color: colors.yellow,
     fontFamily: fonts.MontserratThin,
@@ -215,6 +222,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  container6: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   buttonMargin: {
     minWidth: 100,
     margin: 10,
@@ -229,6 +241,6 @@ const styles = StyleSheet.create({
     fontFamily: fonts.MontserratLight,
   },
   keyboard: {
-    borderWidth: 20,
+    flex:1,
   }
 });

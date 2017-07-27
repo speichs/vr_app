@@ -29,11 +29,23 @@ export default class Card extends React.Component {
       },
     };
   }
-
-  static navigationOptions = {header:null}
-  addAmount = ()=>{
-    this.props.navigation.navigate('Amount')
-  }
+  static navigationOptions = {
+  headerStyle: {
+    height: 25,
+    backgroundColor: colors.darkgray,
+  },
+  headerBackTitleStyle: {
+    fontFamily: fonts.MontserratLight
+  },
+  headerTintColor: colors.yellow,
+  headerTitleStyle: {
+    fontFamily: fonts.MontserratLight,
+   },
+  };
+  // static navigationOptions = {header:null}
+  // addAmount = ()=>{
+  //   this.props.navigation.navigate('Amount')
+  // }
 
   onChange = (form) => {
    this.setState({form: form});
@@ -99,7 +111,7 @@ export default class Card extends React.Component {
             <CreditCardInput onChange={this.onChange} />
           </View>
           <View style={styles.container2}>
-            <TouchableOpacity disabled={!this.state.form.valid} onPress = {() => {
+            <TouchableOpacity disabled={!this.state.form.valid } onPress = {() => {
               navigate('Thanks', {name: this.state.form.values.name})
               this.handleClick()
             }}>
