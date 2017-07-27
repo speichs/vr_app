@@ -27,8 +27,12 @@ To see the VR Kiosk donation interface in all its glory, please follow these ste
 ## [Trello project management tracker public link](https://trello.com/b/NjV8tJT7/vr-app)
 ## [Google Drive wireframes link](https://drive.google.com/drive/folders/0BwXfo7CF48C2SjZaU2lRNVhWWFk)
 
-### Additional Components
+### Additional Components for Project:
 - [VR Server](https://github.com/tasmandrake/vr_server)
+
+### NPM Packages created & published:
+- [tasman-credit-card-input](https://www.npmjs.com/package/tasman-credit-card-input)
+- [elizabeth-tas-numpad](https://www.npmjs.com/package/tasman-credit-card-input)
 
 #### Who are we?
 - [Elizabeth Flournoy](https://github.com/emflournoy)
