@@ -88,15 +88,22 @@ export default class Amount extends React.Component {
               <View>
                 <View style={styles.container4}>
                   <View style = {styles.container6}>
-                  <Text style={titleFont}>Specify an amount:</Text>
+                    <Text style={titleFont}>Specify an amount:</Text>
                   </View>
                   <View style = {styles.container2}>
-                  <TextInput style={styles.amount} placeholder="$" placeholderTextColor = {colors.yellow} onChangeText={(text) => this.setState({text})} value={this.state.text}/>
+                    <TextInput style={styles.amount} placeholder="$" placeholderTextColor = {colors.yellow} onChangeText={(text) => this.setState({text})} value={this.state.text}/>
                   </View>
-                  <View style={styles.container2}>
-                  <TouchableOpacity onPress={() => navigate('Confirm', {donation: this.state.text})}>
-                  <Text style={button}>Donate now!</Text>
-                  </TouchableOpacity>
+                  <View style={styles.container3}>
+                    <View style={styles.buttonMargin}>
+                      <TouchableOpacity onPress={this.showOther}>
+                        <Text style={button}>Go Back</Text>
+                      </TouchableOpacity>
+                    </View>
+                    <View style={styles.buttonMargin}>
+                      <TouchableOpacity onPress={() => navigate('Confirm', {donation: this.state.text})}>
+                        <Text style={button}>Donate now!</Text>
+                      </TouchableOpacity>
+                    </View>
                   </View>
                 </View>
                 <View style = {styles.container5}>
@@ -210,6 +217,7 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     flexDirection: 'row',
     alignItems: 'flex-start',
+    marginBottom:15,
   },
   container4: {
     flex:2,
