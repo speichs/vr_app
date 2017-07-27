@@ -1,5 +1,42 @@
-# vr_app
+# Reality Garage VR Kiosk donation interface
 
-# Trello Link : https://trello.com/b/5b8KpN8V
+## Project Overview:
+In cooperation with and on behalf of [Reality Garage](http://realitygarage.com/), this team used: React Native, Stripe payment integration, Socket.io, Node.js/Express.js and PostgreSQL/Knex.js to provide as **MVP** a secure method for kiosk-users to donate moneys to the VR experience provider (e.g. Wildlife Protection Solutions, Boulder Symphony, etc).
+#### Stretch goals:
+- Split payments at server level to multiple payees
+- Create VR 'donation' experience in Unity
 
-# VR Server: https://github.com/tasmandrake/vr_server
+## Want to try it out?
+To see the VR Kiosk donation interface in all its glory, please follow these steps:
+- Download, Install and Start [Expo](https://expo.io/) on your iOS / Android device...
+- Fork & Clone this repo to your computer...
+- ```$ cd client``` (the app)
+- ```$ yarn``` (to install dependencies)
+- ```$ yarn start``` (to start hosting the app on Expo)
+- Scan the QR code with your device when the packager starts...
+- Donate away!
+#### This really processes credit cards, so feel free to use the Stripe dummy data:
+- credit card number = ```4242 4242 4242 4242``` (required)
+- expiration date = ```02/22``` (required)
+- CVV = ```222``` (required)
+- ZIP = ```22222``` (required)
+- name (required)
+- email (required)
+
+
+## [Trello project management tracker public link](https://trello.com/b/NjV8tJT7/vr-app)
+## [Google Drive wireframes link](https://drive.google.com/drive/folders/0BwXfo7CF48C2SjZaU2lRNVhWWFk)
+
+### Additional Components for Project:
+- [VR Server](https://github.com/tasmandrake/vr_server)
+
+### NPM Packages created & published:
+- [tasman-credit-card-input](https://www.npmjs.com/package/tasman-credit-card-input)
+- [elizabeth-tas-numpad](https://www.npmjs.com/package/tasman-credit-card-input)
+
+## Who are we? g49's sooo-divine:
+- [Elizabeth Flournoy](https://github.com/emflournoy)
+- [Jodie Rigali](https://github.com/jmrigali)
+- [Sean Eichenberger](https://github.com/speichs)
+- [Shannon Rivers](https://github.com/senbenito)
+- [Tasman Drake](https://github.com/tasmandrake)
