@@ -159,7 +159,7 @@ const styles = StyleSheet.create({
   buttonDisabled: {
     fontSize: 30,
     fontFamily: fonts.MontserratLight,
-    color: colors.disabled,
+    color: colors.disabled, //#b5b5b4
     borderStyle: 'solid',
     borderWidth: 2,
     borderColor: colors.disabled,
