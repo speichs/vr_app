@@ -77,7 +77,7 @@ export default class Card extends React.Component {
         amount: this.props.navigation.state.params.donation
       }
       console.log('SENDING OBJECT: ', obj)
-      fetch('https://reality-garage-server.herokuapp.com/', {
+      fetch('https://vr-test-rg.herokuapp.com/api', {
           method: 'post',
           headers: {
             'Accept': 'application/json',

@@ -20,23 +20,32 @@ export default class Start extends React.Component {
     };
   }
 
-  // componentWillMount(){
-  //   let socket = io('http://localhost:6000/')
-  //   this.amount = 'sean'
-  //   let second = 'x'
-  //   socket.on('amount', (data)=>{
-  //     second = data;
-  //     return false;
-  //   })
-  //   this.amount = second
-  // }
 
   componentDidMount(){
-    let that = this
-    let socket = io('http://localhost:6000/')
-    socket.on('amount', function(data){
-      that.setState({donation: data})
-    })
+     let that = this
+    // let socket = io('https://vr-test-rg.herokuapp.com')
+    // socket.on('amount', function(data){
+    //   console.log('hey you arrived at the socket on function')
+    //   that.setState({donation: data})
+    // })
+      async function subscribe(path) {
+      const response = await fetch(path, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        }
+      });
+
+      setTimeout(function() {
+        subscribe("https://vr-test-rg.herokuapp.com/poll");
+      }, 3000);
+      return await response.json().then(function(data){
+        that.setState({donation:data.text});
+      })
+    }//end of subscribe function
+
+    var data = subscribe("https://vr-test-rg.herokuapp.com/poll");
   }
 
 
