@@ -39,15 +39,19 @@ export default class Card extends React.Component {
    this.setState({form: form});
  }
 
+
+
   handleClick = () =>{
     var stripe_url = 'https://api.stripe.com/v1/'
     var secret_key = 'pk_test_zNnQiNYcPwaufUQMAWaN6fbC'
     var cardDetails = {
-      "card[number]": 4242424242424242,
-      "card[exp_month]": 10,
-      "card[exp_year]": 20,
-      "card[cvc]": 334
+      "card[number]":this.state.form.values.number,
+      "card[exp_month]":this.state.form.values.expiry.substring(0,2),
+      "card[exp_year]":this.state.form.values.expiry.substring(3,5),
+      "card[cvc]":this.state.form.values.cvc,
+      "card[address_zip]":this.state.form.values.postalCode
     }
+    console.log('CARD DETAILS', cardDetails);
     var formBody = [];
     for (var property in cardDetails) {
       var encodedKey = encodeURIComponent(property);
@@ -64,7 +68,25 @@ export default class Card extends React.Component {
         'Authorization': 'Bearer ' + 'pk_test_zNnQiNYcPwaufUQMAWaN6fbC'
       },
       body: formBody
-    }).then(result=>result.json()).then(result=>console.log(result.id))
+    }).then(result=>result.json()).then(result=>{
+      let obj = {
+        id: result.id,
+        firstName: this.state.form.values.name,
+        lastName: this.state.form.values.name,
+        email: this.state.form.values.email,
+        amount: this.props.navigation.state.params.donation
+      }
+      console.log('SENDING OBJECT: ', obj)
+      fetch('https://reality-garage-server.herokuapp.com/', {
+          method: 'post',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(obj)
+        }).then(result=>result.json()).then(result=>{
+          console.log(result)})
+    })
   }
 
   render() {
@@ -77,10 +99,20 @@ export default class Card extends React.Component {
             <CreditCardInput onChange={this.onChange} />
           </View>
           <View style={styles.container2}>
-            <TouchableOpacity disabled={!this.state.form.valid} onPress = {() => navigate('Thanks', {name: this.state.form.values.name})}>
+            <TouchableOpacity disabled={!this.state.form.valid} onPress = {() => {
+              navigate('Thanks', {name: this.state.form.values.name})
+              this.handleClick()
+            }}>
+
               <Text style={button}>Submit</Text>
             </TouchableOpacity>
           </View>
+        </View>
+        <View>
+          <Text style={styles.footer}>Powered By:
+            <Text style={styles.garage}> REALITY GARAGE
+            </Text>
+          </Text>
         </View>
       </View>
     );
@@ -94,6 +126,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'column',
+    paddingTop: 40
   },
   container1: {
     flex:1,
@@ -128,7 +161,7 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontFamily: fonts.MontserratThin,
     color: colors.white,
-    paddingBottom: 10,
+    paddingBottom: 30,
   },
   garage: {
     fontFamily: fonts.MontserratLight,
