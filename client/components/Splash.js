@@ -5,7 +5,7 @@ import colors from '../config/colors';
 import fonts from '../config/fonts';
 import button from '../assets/buttons/buttons';
 import titleFont from '../assets/font/font';
-import io from 'socket.io-client';
+//import io from 'socket.io-client';
 
 
 export default class Start extends React.Component {
@@ -19,33 +19,6 @@ export default class Start extends React.Component {
       donation: ''
     };
   }
-
-
-  // componentDidMount(){
-  //    let that = this
-  //   // let socket = io('https://vr-test-rg.herokuapp.com')
-  //   // socket.on('amount', function(data){
-  //   //   console.log('hey you arrived at the socket on function')
-  //   //   that.setState({donation: data})
-  //   // })
-  //     async function subscribe(path) {
-  //     const response = await fetch(path, {
-  //       method: 'GET',
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //         'Accept': 'application/json',
-  //       }
-  //     });
-  //
-  //     setTimeout(function() {
-  //       subscribe("https://reality-garage-server.herokuapp.com/poll");
-  //     }, 3000);
-  //     return await response.json().then(function(data){
-  //       that.setState({donation:data.text});
-  //     })
-  //   }//end of subscribe function
-  //   var data = subscribe("https://reality-garage-server.herokuapp.com/poll");
-  // }
 
 
 

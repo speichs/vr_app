@@ -31,11 +31,6 @@ export default class Confirm extends React.Component {
 
   componentDidMount(){
      let that = this
-    // let socket = io('https://vr-test-rg.herokuapp.com')
-    // socket.on('amount', function(data){
-    //   console.log('hey you arrived at the socket on function')
-    //   that.setState({donation: data})
-    // })
       async function subscribe(path) {
       const response = await fetch(path, {
         method: 'GET',
@@ -44,12 +39,12 @@ export default class Confirm extends React.Component {
           'Accept': 'application/json',
         }
       });
-
       setTimeout(function() {
         subscribe("https://reality-garage-server.herokuapp.com/poll");
       }, 3000);
       return await response.json().then(function(data){
-        that.setState({donation:data.text});
+        console.log(data)
+        that.setState({donation:data.price});
       })
     }//end of subscribe function
     var data = subscribe("https://reality-garage-server.herokuapp.com/poll");
