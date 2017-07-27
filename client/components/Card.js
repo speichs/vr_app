@@ -115,7 +115,6 @@ export default class Card extends React.Component {
               navigate('Thanks', {name: this.state.form.values.name})
               this.handleClick()
             }}>
-
               <Text style={button}>Submit</Text>
             </TouchableOpacity>
           </View>
