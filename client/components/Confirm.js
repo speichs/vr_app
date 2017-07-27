@@ -24,20 +24,48 @@ export default class Confirm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      organization: 'Wildlife Protection Solutions'
+      organization: 'Wildlife Protection Solutions',
+      donation: ''
     };
   }
+
+  componentDidMount(){
+     let that = this
+    // let socket = io('https://vr-test-rg.herokuapp.com')
+    // socket.on('amount', function(data){
+    //   console.log('hey you arrived at the socket on function')
+    //   that.setState({donation: data})
+    // })
+      async function subscribe(path) {
+      const response = await fetch(path, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        }
+      });
+
+      setTimeout(function() {
+        subscribe("https://reality-garage-server.herokuapp.com/poll");
+      }, 3000);
+      return await response.json().then(function(data){
+        that.setState({donation:data.text});
+      })
+    }//end of subscribe function
+    var data = subscribe("https://reality-garage-server.herokuapp.com/poll");
+  }
+
   render() {
     const { navigate } = this.props.navigation;
     return (
       <View style={styles.container}>
         <View style={styles.container3}>
-          <Text style={titleFont}>Your Donation: ${this.props.navigation.state.params.donation}</Text>
+          <Text style={titleFont}>Your Donation: ${this.state.donation}</Text>
           <View style={styles.marginFix}>
             <Text style={titleFont}>To: {this.state.organization}</Text>
           </View>
           <View style={styles.button}>
-            <TouchableOpacity  onPress={() => navigate('Card',{donation: this.props.navigation.state.params.donation})}>
+            <TouchableOpacity  onPress={() => navigate('Card',{donation: this.state.donation})}>
               <Text style={button}>Pay Now</Text>
             </TouchableOpacity>
           </View>

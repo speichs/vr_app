@@ -1,8 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, Button, Alert, TouchableOpacity, View, StatusBar, DatePickerIOS } from 'react-native';
-
 import { FormLabel, FormInput, FormValidationMessage } from 'react-native-elements'
-
 import { StackNavigator } from 'react-navigation';
 import button from '../assets/buttons/buttons';
 import colors from '../config/colors';
@@ -38,7 +36,6 @@ export default class Card extends React.Component {
   onChange = (form) => {
    this.setState({form: form});
  }
-
 
 
   handleClick = () =>{
@@ -77,7 +74,7 @@ export default class Card extends React.Component {
         amount: this.props.navigation.state.params.donation
       }
       console.log('SENDING OBJECT: ', obj)
-      fetch('https://vr-test-rg.herokuapp.com/api', {
+      fetch('https://reality-garage-server.herokuapp.com/api', {
           method: 'post',
           headers: {
             'Accept': 'application/json',
