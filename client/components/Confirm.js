@@ -18,6 +18,7 @@ export default class Confirm extends React.Component {
   headerTitleStyle: {
     fontFamily: fonts.MontserratLight,
    },
+   title: 'BACK', 
 };
 
 
