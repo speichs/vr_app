@@ -34,7 +34,7 @@ To see the VR Kiosk donation interface in all its glory, please follow these ste
 - [tasman-credit-card-input](https://www.npmjs.com/package/tasman-credit-card-input)
 - [elizabeth-tas-numpad](https://www.npmjs.com/package/tasman-credit-card-input)
 
-#### Who are we? g49's sooo-divine:
+## Who are we? g49's sooo-divine:
 - [Elizabeth Flournoy](https://github.com/emflournoy)
 - [Jodie Rigali](https://github.com/jmrigali)
 - [Sean Eichenberger](https://github.com/speichs)
