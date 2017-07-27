@@ -7,18 +7,9 @@ import fonts from '../config/fonts';
 
 export default class Confirm extends React.Component {
   static navigationOptions = {
-  headerStyle: {
-    height: 25,
-    backgroundColor: colors.darkgray,
-  },
-  headerBackTitleStyle: {
-    fontFamily: fonts.MontserratLight
-  },
-  headerTintColor: colors.yellow,
-  headerTitleStyle: {
-    fontFamily: fonts.MontserratLight,
-   },
-};
+    header:null,
+    title: 'BACK',
+  };
 
 
   constructor(props) {
