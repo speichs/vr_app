@@ -16,11 +16,12 @@ export default class Confirm extends React.Component {
     super(props);
     this.state = {
       organization: 'Wildlife Protection Solutions',
-      donation: ''
+      donation: 0
     };
   }
 
-  componentDidMount(){
+  componentWillMount(){
+    console.log('in componentWillMount');
     fetch('https://reality-garage-server.herokuapp.com/confirm', {
       method: 'GET',
       headers: {
@@ -29,7 +30,8 @@ export default class Confirm extends React.Component {
         }
     })
     .then(result=>result.json()).then((result)=>{
-      this.setState({donation: result})
+      console.log('logging from did mount')
+      this.setState({donation: result.price})
     });
 
     //  let that = this
