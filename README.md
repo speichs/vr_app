@@ -2,7 +2,8 @@
 
 ## Project Overview:
 In cooperation with and on behalf of [Reality Garage](http://realitygarage.com/), this team used: React Native, Stripe payment integration, Socket.io, Node.js/Express.js and PostgreSQL/Knex.js to provide as **MVP** a secure method for kiosk-users to donate moneys to the VR experience provider (e.g. Wildlife Protection Solutions, Boulder Symphony, etc).
-## Project Landing Page:
+
+#### Project Landing Page:
 - [http://checkout-vr.surge.sh/](http://checkout-vr.surge.sh/)
 
 #### Stretch goals:
