@@ -4,7 +4,6 @@ import { StyleSheet, Text, Button, Alert, TouchableOpacity, View, StatusBar, Dat
 import { FormLabel, FormInput, FormValidationMessage } from 'react-native-elements'
 
 import { StackNavigator } from 'react-navigation';
-// import {button, buttonDisabled} from '../assets/buttons/buttons';
 import colors from '../config/colors';
 import fonts from '../config/fonts';
 import {CreditCardInput} from 'tasman-credit-card-input';
