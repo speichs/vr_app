@@ -33,25 +33,6 @@ export default class Confirm extends React.Component {
       console.log('logging from did mount')
       this.setState({donation: result.price})
     });
-
-    //  let that = this
-    //   async function subscribe(path) {
-    //   const response = await fetch(path, {
-    //     method: 'GET',
-    //     headers: {
-    //       'Content-Type': 'application/json',
-    //       'Accept': 'application/json',
-    //     }
-    //   });
-    //   setTimeout(function() {
-    //     subscribe("https://reality-garage-server.herokuapp.com/poll");
-    //   }, 3000);
-    //   return await response.json().then(function(data){
-    //     console.log(data)
-    //     that.setState({donation:data.price});
-    //   })
-    // }//end of subscribe function
-    // var data = subscribe("https://reality-garage-server.herokuapp.com/poll");
   }
 
 
@@ -64,17 +45,17 @@ export default class Confirm extends React.Component {
           <View style={styles.marginFix}>
             <Text style={titleFont}>To: {this.state.organization}</Text>
           </View>
-          <View style={styles.container4}>
-            <View style={styles.buttonMargin}>
+        </View>
+        <View style={styles.container4}>
+          <View style={styles.buttonMargin}>
             <TouchableOpacity  onPress={() => navigate('SelectAmount')}>
               <Text style={button}>Another Amount</Text>
             </TouchableOpacity>
-            </View>
-            <View style={styles.buttonMargin}>
+          </View>
+          <View style={styles.buttonMargin}>
             <TouchableOpacity  onPress={() => navigate('Card',{donation: this.state.donation})}>
               <Text style={button}>Pay Now</Text>
             </TouchableOpacity>
-            </View>
           </View>
         </View>
         <View style={styles.container2}>
@@ -111,7 +92,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end'
   },
   container3: {
-    flex:2,
+    flex:3,
     justifyContent: 'flex-end',
     alignItems: 'center'
   },

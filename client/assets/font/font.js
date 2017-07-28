@@ -6,4 +6,5 @@ export default titleFont = {
   fontFamily: fonts.MontserratThin,
   color: colors.white,
   margin: 20,
+  textAlign: 'center',
 }

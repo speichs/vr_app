@@ -33,9 +33,8 @@ export default class Start extends React.Component {
     const {navigate} = this.props.navigation;
     setTimeout(function() {
       navigate('Splash')
-    }, 5000);
+    }, 12000);
   }
-
 
 
   render() {
@@ -45,7 +44,7 @@ export default class Start extends React.Component {
         <View style={styles.container2}>
           {this.makePost(0)}
           {this.changePage()}
-          <Text style={titleFont}> Thanks for donating, {this.state.name}!</Text>
+          <Text style={titleFont}> Thanks for donating,{"\n"}{this.state.name}!</Text>
         </View>
         <View style={styles.container3}>
           <Text style={styles.footer}>Powered By:

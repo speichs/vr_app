@@ -60,7 +60,7 @@ export default class Start extends React.Component {
       <View style={styles.container}>
         <StatusBar hidden={true} />
         <View style={styles.subcontainer1}>
-          <Text style={titleFont}>Please put on the headset to begin.</Text>
+          <Text style={titleFont}>Please put on the{"\n"}headset to begin.</Text>
           <View>
           </View>
         </View>
