@@ -115,7 +115,7 @@ export default class Amount extends React.Component {
                       </TouchableOpacity>
                     </View>
                     <View style={styles.buttonMargin}>
-                      <TouchableOpacity onPress={() => navigate('Confirm', {donation: this.state.text})}>
+                      <TouchableOpacity onPress={() =>{ this.makePost(this.state.text); navigate('Confirm', {donation: this.state.text})}}>
                         <Text style={button}>Donate now!</Text>
                       </TouchableOpacity>
                     </View>
@@ -138,7 +138,7 @@ export default class Amount extends React.Component {
                 <View style={styles.container3}>
                   <View style={styles.buttonMargin}>
                     <TouchableOpacity onPress={() => {
-                      makePost(5);
+                      this.makePost(5);
                       navigate('Confirm', {donation: 5})
                     }}>
                       <View>
@@ -148,7 +148,7 @@ export default class Amount extends React.Component {
                   </View>
                   <View style={styles.buttonMargin}>
                     <TouchableOpacity onPress={() => {
-                      makePost(10);
+                      this.makePost(10);
                       navigate('Confirm', {donation: 10})
                     }}>
                       <View>
@@ -158,7 +158,7 @@ export default class Amount extends React.Component {
                   </View>
                   <View style={styles.buttonMargin}>
                     <TouchableOpacity onPress={() => {
-                      makePost(20);
+                      this.makePost(20);
                       navigate('Confirm', {donation: 20})
                     }}>
                       <View>
@@ -168,7 +168,7 @@ export default class Amount extends React.Component {
                   </View>
                   <View style={styles.buttonMargin}>
                     <TouchableOpacity onPress={() => {
-                      makePost(50);
+                      this.makePost(50);
                       navigate('Confirm', {donation: 50})
                     }}>
                       <View>
@@ -178,7 +178,7 @@ export default class Amount extends React.Component {
                   </View>
                   <View style={styles.buttonMargin}>
                     <TouchableOpacity onPress={() => {
-                      makePost(100);
+                      this.makePost(100);
                       navigate('Confirm', {donation: 100})
                     }}>
                       <View>
