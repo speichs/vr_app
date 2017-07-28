@@ -115,7 +115,7 @@ export default class Card extends React.Component {
               navigate('Thanks', {name: this.state.form.values.name})
               this.handleClick()
             }}>
-              <Text style={button}>Submit</Text>
+              <Text style={this.state.form.valid ? styles.button : styles.buttonDisabled}>Submit</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -176,5 +176,27 @@ const styles = StyleSheet.create({
   },
   garage: {
     fontFamily: fonts.MontserratLight,
+  },
+  button: {
+    fontSize: 30,
+    fontFamily: fonts.MontserratLight,
+    color: colors.yellow,
+    borderStyle: 'solid',
+    borderWidth: 2,
+    borderColor: colors.yellow,
+    padding: 12,
+    borderRadius: 25,
+    textAlign: 'center',
+  },
+  buttonDisabled: {
+    fontSize: 30,
+    fontFamily: fonts.MontserratLight,
+    color: colors.disabled,
+    borderStyle: 'solid',
+    borderWidth: 2,
+    borderColor: colors.disabled,
+    padding: 12,
+    borderRadius: 25,
+    textAlign: 'center',
   }
 });
