@@ -8,7 +8,51 @@ import titleFont from '../assets/font/font';
 
 
 export default class Start extends React.Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      donation: 0
+    }
+  }
+
   static navigationOptions = { header:null}
+
+
+  componentDidMount(){
+     let that = this
+      async function subscribe(path) {
+      const response = await fetch(path, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        }
+      });
+      setTimeout(function() {
+        if(that.state.donation === 0){
+          console.log('logging from subscribe:', that.state.donation)
+          subscribe("https://reality-garage-server.herokuapp.com/poll");
+        }
+        else{
+          return
+        }
+
+      }, 3000);
+      return await response.json().then(function(data){
+        console.log(data)
+        that.setState({donation:data.price});
+        that.checkDonation(data);
+      })
+    }//end of subscribe function
+    var data = subscribe("https://reality-garage-server.herokuapp.com/poll");
+  }
+
+  checkDonation = (data) => {
+    var { navigate } = this.props.navigation;
+    if(data.price!==0){
+      navigate('Confirm');
+    }
+  }
 
   render() {
     const { navigate } = this.props.navigation;

@@ -16,29 +16,42 @@ export default class Confirm extends React.Component {
     super(props);
     this.state = {
       organization: 'Wildlife Protection Solutions',
-      donation: ''
+      donation: 0
     };
   }
 
-  componentDidMount(){
-     let that = this
-      async function subscribe(path) {
-      const response = await fetch(path, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
+  componentWillMount(){
+    console.log('in componentWillMount');
+    fetch('https://reality-garage-server.herokuapp.com/confirm', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
         }
-      });
-      setTimeout(function() {
-        subscribe("https://reality-garage-server.herokuapp.com/poll");
-      }, 3000);
-      return await response.json().then(function(data){
-        console.log(data)
-        that.setState({donation:data.price});
-      })
-    }//end of subscribe function
-    var data = subscribe("https://reality-garage-server.herokuapp.com/poll");
+    })
+    .then(result=>result.json()).then((result)=>{
+      console.log('logging from did mount')
+      this.setState({donation: result.price})
+    });
+
+    //  let that = this
+    //   async function subscribe(path) {
+    //   const response = await fetch(path, {
+    //     method: 'GET',
+    //     headers: {
+    //       'Content-Type': 'application/json',
+    //       'Accept': 'application/json',
+    //     }
+    //   });
+    //   setTimeout(function() {
+    //     subscribe("https://reality-garage-server.herokuapp.com/poll");
+    //   }, 3000);
+    //   return await response.json().then(function(data){
+    //     console.log(data)
+    //     that.setState({donation:data.price});
+    //   })
+    // }//end of subscribe function
+    // var data = subscribe("https://reality-garage-server.herokuapp.com/poll");
   }
 
 

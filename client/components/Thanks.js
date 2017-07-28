@@ -15,11 +15,36 @@ export default class Start extends React.Component {
       name: this.props.navigation.state.params.name
     }
   }
+
+  makePost = (amount) => {
+    let obj = {donation: amount};
+    fetch('https://reality-garage-server.herokuapp.com/button', {
+        method: 'post',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(obj)
+      }).then(result=>result.json()).then(result=>{
+        console.log(result)})
+  }
+
+  changePage = () =>{
+    const {navigate} = this.props.navigation;
+    setTimeout(function() {
+      navigate('Splash')
+    }, 5000);
+  }
+
+
+
   render() {
+    const {navigate} = this.props.navigation;
     return (
       <View style={styles.container}>
         <View style={styles.container2}>
-
+          {this.makePost(0)}
+          {this.changePage()}
           <Text style={titleFont}> Thanks for donating, {this.state.name}!</Text>
         </View>
         <View style={styles.container3}>
