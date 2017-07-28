@@ -16,7 +16,13 @@ export default class Start extends React.Component {
       <View style={styles.container}>
         <StatusBar hidden={true} />
         <View style={styles.subcontainer1}>
-          <Text style={titleFont}>Please put on the headset to begin.</Text>
+          <TouchableOpacity onPress={() => {
+            navigate('Thanks', {name: 'Tas'})}}>
+          <Text>
+
+            Please put on the headset to begin.
+          </Text>
+        </TouchableOpacity>
           <View>
           </View>
         </View>

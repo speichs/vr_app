@@ -15,6 +15,21 @@ export default class Start extends React.Component {
       name: this.props.navigation.state.params.name
     }
   }
+  componentDidUpdate() {
+    // console.log('mount');
+
+    const { navigate } = this.props.navigation;
+    navigate('Splash')
+  }
+  componentDidMount() {
+    fetch('http://localhost:5000/reset', {
+      method: 'get',
+    })
+    setTimeout(() => {
+      this.setState({ name: '' })
+      console.log('time');
+    }, 5000);
+  }
   render() {
     return (
       <View style={styles.container}>
