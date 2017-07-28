@@ -78,6 +78,21 @@ export default class Amount extends React.Component {
         });
     }
   }
+
+  makePost = (amount) => {
+    let obj = {donation: amount};
+    fetch('https://reality-garage-server.herokuapp.com/button', {
+        method: 'post',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(obj)
+      }).then(result=>result.json()).then(result=>{
+        console.log(result)})
+  }
+
+
   render() {
     const {navigate} = this.props.navigation;
     return (
@@ -122,35 +137,50 @@ export default class Amount extends React.Component {
               </View>
                 <View style={styles.container3}>
                   <View style={styles.buttonMargin}>
-                    <TouchableOpacity onPress={() => navigate('Confirm', {donation: 5})}>
+                    <TouchableOpacity onPress={() => {
+                      makePost(5);
+                      navigate('Confirm', {donation: 5})
+                    }}>
                       <View>
                         <Text style={button}>$5</Text>
                       </View>
                     </TouchableOpacity>
                   </View>
                   <View style={styles.buttonMargin}>
-                    <TouchableOpacity onPress={() => navigate('Confirm', {donation: 10})}>
+                    <TouchableOpacity onPress={() => {
+                      makePost(10);
+                      navigate('Confirm', {donation: 10})
+                    }}>
                       <View>
                         <Text style={button}>$10</Text>
                       </View>
                     </TouchableOpacity>
                   </View>
                   <View style={styles.buttonMargin}>
-                    <TouchableOpacity onPress={() => navigate('Confirm', {donation: 20})}>
+                    <TouchableOpacity onPress={() => {
+                      makePost(20);
+                      navigate('Confirm', {donation: 20})
+                    }}>
                       <View>
                         <Text style={button}>$20</Text>
                       </View>
                     </TouchableOpacity>
                   </View>
                   <View style={styles.buttonMargin}>
-                    <TouchableOpacity onPress={() => navigate('Confirm', {donation: 50})}>
+                    <TouchableOpacity onPress={() => {
+                      makePost(50);
+                      navigate('Confirm', {donation: 50})
+                    }}>
                       <View>
                         <Text style={button}>$50</Text>
                       </View>
                     </TouchableOpacity>
                   </View>
                   <View style={styles.buttonMargin}>
-                    <TouchableOpacity onPress={() => navigate('Confirm', {donation: 100})}>
+                    <TouchableOpacity onPress={() => {
+                      makePost(100);
+                      navigate('Confirm', {donation: 100})
+                    }}>
                       <View>
                         <Text style={button}>$100</Text>
                       </View>
