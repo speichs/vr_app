@@ -10,6 +10,35 @@ import titleFont from '../assets/font/font';
 export default class Start extends React.Component {
   static navigationOptions = { header:null}
 
+  componentDidMount(){
+     let that = this
+      async function subscribe(path) {
+      const response = await fetch(path, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        }
+      });
+      setTimeout(function() {
+        subscribe("https://reality-garage-server.herokuapp.com/poll");
+      }, 3000);
+      return await response.json().then(function(data){
+        console.log(data)
+        that.setState({donation:data.price});
+        that.checkDonation(data);
+      })
+    }//end of subscribe function
+    var data = subscribe("https://reality-garage-server.herokuapp.com/poll");
+  }
+
+  checkDonation = (data) => {
+    var { navigate } = this.props.navigation;
+    if(data.price!==10){
+      navigate('Confirm');
+    }
+  }
+
   render() {
     const { navigate } = this.props.navigation;
     return (

@@ -21,24 +21,35 @@ export default class Confirm extends React.Component {
   }
 
   componentDidMount(){
-     let that = this
-      async function subscribe(path) {
-      const response = await fetch(path, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
+    fetch('https://reality-garage-server.herokuapp.com/confirm', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
         }
-      });
-      setTimeout(function() {
-        subscribe("https://reality-garage-server.herokuapp.com/poll");
-      }, 3000);
-      return await response.json().then(function(data){
-        console.log(data)
-        that.setState({donation:data.price});
-      })
-    }//end of subscribe function
-    var data = subscribe("https://reality-garage-server.herokuapp.com/poll");
+    })
+    .then(result=>result.json()).then((result)=>{
+      this.setState({donation: result})
+    });
+
+    //  let that = this
+    //   async function subscribe(path) {
+    //   const response = await fetch(path, {
+    //     method: 'GET',
+    //     headers: {
+    //       'Content-Type': 'application/json',
+    //       'Accept': 'application/json',
+    //     }
+    //   });
+    //   setTimeout(function() {
+    //     subscribe("https://reality-garage-server.herokuapp.com/poll");
+    //   }, 3000);
+    //   return await response.json().then(function(data){
+    //     console.log(data)
+    //     that.setState({donation:data.price});
+    //   })
+    // }//end of subscribe function
+    // var data = subscribe("https://reality-garage-server.herokuapp.com/poll");
   }
 
 
