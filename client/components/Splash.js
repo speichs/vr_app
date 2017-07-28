@@ -16,15 +16,8 @@ export default class Start extends React.Component {
       <View style={styles.container}>
         <StatusBar hidden={true} />
         <View style={styles.subcontainer1}>
-          <Text style={titleFont}>Want to help?</Text>
+          <Text style={titleFont}>Please put on the headset to begin.</Text>
           <View>
-            <TouchableOpacity  onPress={
-              () => navigate('SelectAmount')}
-            >
-              <View>
-                <Text style={button}>Donate now!</Text>
-              </View>
-            </TouchableOpacity>
           </View>
         </View>
         <View>
